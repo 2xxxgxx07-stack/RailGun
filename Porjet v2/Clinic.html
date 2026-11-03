@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinicSmart Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">ClinicSmart</span>
+            </h1>
+            <p style="max-width: 800px;">
+                ClinicSmart is a tailored management platform designed for specialized medical clinics such as
+                Ophthalmology and Dentistry, structuring workflows and clinical charting around specific clinical
+                requirements. It replaces generic EMR templates with specialty-specific documentation flows.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=321-126542&viewport=244%2C162%2C0.5&t=j8FY51RGV5Nq0A8f-0&scaling=contain&content-scaling=fixed&starting-point-node-id=321%3A126542"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="#" class="btn" style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+                    alt="Clinic" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80"
+                    alt="Medical Equipment" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=500&q=80" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&q=80" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/Clinicsmart.jpg" alt="ClinicSmart Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    ClinicSmart is a specialty clinic management system designed to replace generic EMR templates
+                    with structured, specialty-specific clinical workflows. The platform supports Ophthalmology,
+                    Dentistry, and other specialized practices by providing consultation forms, diagnostic
+                    charting, and patient management tools tailored to each specialty's clinical requirements.
+                    The project focuses on reducing the friction specialists face when using general-purpose
+                    systems that do not match their actual clinical workflow.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The design process began with research into how specialist doctors document consultations
+                    and how generic EMR systems fail to support specialty-specific diagnostic routines. Clinicians
+                    described navigating multiple screens to complete clinical notes that do not align with the
+                    natural order of a specialty consultation. These insights shaped the information architecture,
+                    specialty-specific form design, and clinical workflow structure before being tested through
+                    wireframes and high-fidelity prototypes with specialist physicians.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    ClinicSmart organizes clinical documentation around the natural flow of each specialty's
+                    consultation process. For Ophthalmology, this means structured visual acuity recording,
+                    anterior and posterior segment examination fields, and prescription management. For Dentistry,
+                    it means dental charting integrated with treatment planning and procedure recording. The
+                    core concept is Specialty-First Design — building the interface around the clinical
+                    workflow rather than forcing clinicians to adapt to a generic system structure.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research involved observing specialty consultations and interviewing clinicians about their
+                    documentation experience with existing EMR systems. Ophthalmologists described the frustration
+                    of entering visual acuity findings and lens prescriptions into fields designed for general
+                    medical records. Dentists highlighted the disconnect between dental charting conventions
+                    and the linear form structures in standard clinic software. User Personas represented
+                    specialist physicians and clinic administrators across different practice types. Empathy Maps
+                    captured the cognitive effort required to adapt to non-specialist systems and the impact
+                    on consultation efficiency.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona.jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona 2.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Key challenges were identified around three areas: specialty clinics lacking clinical
+                    documentation tools aligned with their actual workflow, doctors navigating multiple screens
+                    to complete specialty-specific clinical notes, and diagnostic steps being displayed out of
+                    sync with real-world consultation sequences. Problem Statements were developed for each
+                    specialty context, and Design Goals focused on creating a documentation experience that
+                    mirrors the natural progression of a specialty consultation. User Journey Maps traced the
+                    full patient encounter from check-in through specialist examination to prescription and
+                    follow-up planning.
+                </p>
+                <div class="mt-16" style="margin-top: 32px;">
+                    <img src="../assets/Clinicsmart.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Ideation explored how to design consultation forms that adapt to the specific sequence of
+                    clinical steps for each specialty without creating a rigid, overly specialized system that
+                    is difficult to maintain. User Flows mapped the complete consultation workflow for Ophthalmology
+                    and Dental consultations, identifying where specialty-specific components needed to be
+                    integrated into the standard clinic management flow. A Sitemap organized the platform to
+                    support multiple specialty configurations while maintaining a consistent navigation structure
+                    across all practice types.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../assets/Clinicsmart.jpg" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../assets/Clinicsmart.jpg" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Wireframes established the specialty-specific consultation form layouts, the patient management
+                    screen, appointment scheduling interface, and the prescription and treatment planning views.
+                    High-fidelity designs applied a clean, professional aesthetic appropriate for medical settings,
+                    with specialty-specific charting components integrated naturally into the consultation flow.
+                    Interactive prototypes simulated complete Ophthalmology and Dental consultation sessions
+                    for usability testing with specialist physicians.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../assets/Clinicsmart.jpg" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted with Ophthalmologists and Dental specialists using
+                        specialty-specific consultation scenarios. Testing evaluated how naturally the consultation
+                        form matched the clinician's real-world documentation sequence and whether specialty
+                        components were positioned logically within the workflow. Feedback identified areas where
+                        field ordering, terminology, and specialty charting elements needed refinement to better
+                        align with actual clinical practice patterns.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Natural Clinical Flow
+                            — Specialists confirmed that the consultation form matched their real-world documentation sequence more closely than standard EMR systems.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Reduced Screen Navigation
+                            — Doctors completed specialty consultation documentation with fewer screen transitions.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Faster Prescription Creation
+                            — Specialty-specific prescription tools reduced the time needed to complete prescriptions during consultations.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Positive Adoption Intent
+                            — Clinicians expressed strong preference for ClinicSmart over their current generic EMR systems.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The ClinicSmart Design System supports specialty-configurable
+                        clinical interfaces with a consistent visual foundation. It includes specialty charting
+                        component guidelines, form layout patterns, clinical status indicators, and typography
+                        optimized for dense medical documentation while maintaining readability during consultations.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        ClinicSmart's visual direction is clean, precise, and specialty-aware. The interface
+                        uses a light, professional aesthetic with clear clinical form structure and neutral
+                        tones that support focused documentation during consultations. Specialty-specific
+                        visual elements reinforce the tailored nature of the platform without creating visual
+                        complexity that distracts from the clinical workflow.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../assets/MAT (1).jpg" alt="Mood 1" class="rounded-img">
+                    <img src="../assets/MAT (2).jpg" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../assets/Clinicsmart.jpg" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorCopilot AI Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">DoctorCopilot AI</span>
+            </h1>
+            <p style="max-width: 800px;">
+                DoctorCopilot AI is a cutting-edge web application designed to streamline patient data management
+                for healthcare professionals. By leveraging real-time data synchronization and intuitive interfaces,
+                it enhances communication among medical staff and reduces the risk of errors in patient care.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=188-4895&viewport=-1180%2C208%2C0.33&t=j8FY51RGV5Nq0A8f-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=188%3A4895"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="#" class="btn" style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+                    alt="Hospital" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80"
+                    alt="Medical Equipment" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=500&q=80" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&q=80" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/DoctorCopilot-AI.jpg" alt="DoctorCopilot Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    DoctorCopilot AI is an AI-assisted medical documentation platform designed to reduce the
+                    administrative burden on physicians. The system automates clinical note generation during
+                    consultations, allowing doctors to focus on patient interaction rather than data entry. The
+                    project addresses physician burnout caused by excessive documentation, aiming to create a
+                    smarter, faster workflow that supports accurate record-keeping without disrupting clinical care.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The design process began by understanding how physicians currently document patient encounters
+                    and where documentation causes the most friction. Research revealed that post-consultation note
+                    writing was consuming significant time that could be spent with patients. Insights were mapped
+                    into user flows and design priorities, leading to an interface that integrates AI assistance
+                    naturally into the consultation workflow. Wireframes and prototypes were iteratively tested
+                    with medical professionals to refine accuracy and usability.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    DoctorCopilot AI uses real-time AI assistance to generate structured clinical notes during
+                    consultations, reducing the time physicians spend on documentation after appointments. The
+                    system presents AI-generated content in an editable format, giving doctors full control to
+                    review and adjust before finalizing records. The core concept focuses on Assisted Documentation,
+                    Reduced Administrative Load, Improved Accuracy, and Seamless Integration into existing
+                    clinical workflows.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research involved shadowing physicians during consultations and post-appointment documentation
+                    sessions. The findings confirmed that the emotional and cognitive load of documentation was
+                    one of the primary contributors to physician burnout. Doctors described feeling pressure to
+                    maintain eye contact with patients while simultaneously trying to capture clinical details
+                    accurately. User Personas represented physicians across different specialties and practice
+                    settings. Empathy Maps captured what physicians say, think, do, and feel during their
+                    documentation workflow — revealing a deep need for tools that reduce mental effort without
+                    compromising clinical accuracy.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../Doctor copilot AI/User persona.jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../Doctor copilot AI/Emphatymap.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Three primary problem areas were identified: physicians spending excessive time writing notes
+                    after consultations, heavy administrative burden leading to burnout, and manual data entry
+                    creating risks of information omission or inaccuracies. Problem Statements were developed for
+                    each challenge, defining what needed to be solved for different physician profiles. Design
+                    Goals focused on reducing documentation time, improving note accuracy, and preserving the
+                    quality of patient interaction during consultations. User Journey Maps traced the full
+                    consultation experience from patient arrival to record submission.
+                </p>
+                <div class="mt-16 define-image-grid" style="gap: 16px; margin-top: 32px;">
+                    <img src="../Doctor copilot AI/Problemstatement.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <!-- <img src="../ClaimGuard/PS2.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../ClaimGuard/PS3.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;"> -->
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../Doctor copilot AI/Design goals.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../Doctor copilot AI/User journeymap.png" alt="Journey" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 300px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Ideation explored how AI assistance could be woven into the consultation workflow without
+                    creating additional friction. User Flows mapped how physicians would interact with the AI
+                    note generation feature from the start to the end of a patient encounter. The system was
+                    designed so that AI suggestions appear naturally alongside existing clinical screens, allowing
+                    physicians to review and approve content rather than generate it from scratch. A Sitemap
+                    structured the platform to keep AI-assisted tools closely integrated with patient records
+                    and consultation history.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../Doctor copilot AI/User flow.png" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../Doctor copilot AI/Sitemap.png" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Wireframes established the layout and flow of the AI-assisted note generation screen, the
+                    patient summary panel, and the consultation history view. High-fidelity designs refined the
+                    visual treatment of AI-generated content, using clear visual cues to differentiate between
+                    AI suggestions and physician-confirmed entries. The interactive prototype simulated a full
+                    patient consultation scenario, allowing physicians to experience how DoctorCopilot AI would
+                    integrate into their existing workflow.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../Doctor copilot AI/Wirefram (1).jpg" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../Doctor copilot AI/Wirefram (2).jpg" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted with physicians to evaluate how effectively the AI-assisted
+                        documentation reduced note-writing time and effort. Participants completed simulated
+                        consultation sessions using the prototype and provided feedback on the AI suggestion
+                        quality, interface clarity, and workflow integration. Testing revealed that trust in
+                        AI-generated content was a key factor, leading to refinements in how suggestions were
+                        displayed, reviewed, and confirmed within the clinical interface.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Reduced Documentation Time
+                            — Physicians reported significantly shorter post-consultation note writing sessions using the AI assistant.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Accuracy
+                            — Structured AI-generated notes reduced information omission during clinical documentation.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Better Patient Interaction
+                            — Physicians felt more present during consultations when AI handled background note generation.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Trusted AI Integration
+                            — Clear review and approval controls gave physicians confidence in the AI-assisted workflow.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The DoctorCopilot AI Design System combines clinical professionalism
+                        with modern AI product aesthetics. It defines color, typography, spacing, component states,
+                        and AI-specific UI patterns such as suggestion cards, confidence indicators, and review
+                        controls — ensuring consistency across all physician-facing screens.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        DoctorCopilot AI's visual direction communicates intelligence, precision, and trust.
+                        The interface uses a clean, modern aesthetic with subtle AI-themed visual cues to signal
+                        where the system is actively assisting. The design balances a clinical environment's need
+                        for clarity and focus with the innovative nature of AI-powered tools.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../assets/MAT (1).jpg" alt="Mood 1" class="rounded-img">
+                    <img src="../Doctor copilot AI/MT 1.png" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../assets/DoctorCopilot-AI.jpg" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HerbaMed Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">HerbaMed</span>
+            </h1>
+            <p style="max-width: 800px;">
+                HerbaMed is a specialized management platform for Traditional Chinese Medicine (TCM) clinics.
+                It supports appointments, patient registration, TCM-specific diagnostic records (tongue, pulse,
+                pattern differentiation), herbal prescription management, and inventory tracking — bringing
+                ancient healing practices into a modern, efficient digital system.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=321-126546&viewport=236%2C136%2C0.52&t=j8FY51RGV5Nq0A8f-0&scaling=contain&content-scaling=fixed&starting-point-node-id=321%3A126546"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="#" class="btn" style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+                    alt="Hospital" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=500&q=80"
+                    alt="Herbs" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1593491034932-844ab981ed7c?w=500&q=80" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&q=80" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/HerbaMed.jpg" alt="HerbaMed Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    HerbaMed is a clinic management system designed specifically for Traditional Chinese Medicine (TCM)
+                    practices. The project addresses the lack of digital tools tailored to TCM workflows, where standard
+                    clinic software fails to capture unique diagnostic modalities such as tongue analysis, pulse diagnosis,
+                    and herbal prescription management. Through user-centered design, HerbaMed aims to digitize the entire
+                    patient journey — from registration and consultation to prescription and inventory — within a unified,
+                    intuitive platform built for TCM practitioners.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The design process began with research into how TCM practitioners manage patient records, diagnoses,
+                    and herbal prescriptions in their daily clinical workflow. Key pain points were identified around
+                    the complexity of documenting TCM-specific diagnoses and tracking multi-ingredient herbal formulas.
+                    These insights shaped the information architecture, user flows, and interface structure before being
+                    translated into wireframes and high-fidelity prototypes. Iterative testing ensured the solution
+                    aligned with real TCM clinical workflows.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    HerbaMed brings all clinic operations into a single platform tailored for TCM. Practitioners can
+                    document tongue and pulse findings, apply pattern differentiation, and generate herbal prescriptions
+                    within a guided interface that mirrors the natural TCM consultation flow. Integrated inventory
+                    tracking ensures herb availability is always visible, reducing operational disruptions. The core
+                    concept is to make TCM-specific clinical documentation as simple and efficient as possible.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research focused on understanding how TCM practitioners conduct consultations, document diagnostic
+                    findings, and manage herbal prescriptions. Interviews revealed significant frustrations with generic
+                    clinic software that lacks fields for TCM-specific data. Practitioners often resorted to paper
+                    records or unstructured digital notes to capture tongue appearance, pulse quality, and pattern
+                    differentiation. User Personas were developed to represent TCM doctors and clinic administrators,
+                    capturing their goals, workflows, and primary pain points. Empathy Maps helped uncover the emotional
+                    and functional challenges practitioners face during consultations.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona.jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona 2.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    From the research, three core problem areas were identified: the inability to document TCM-specific
+                    diagnostic data in existing systems, the complexity of managing multi-ingredient herbal prescriptions,
+                    and the challenge of tracking long-term treatment progress across multiple visits. Problem Statements
+                    were defined for each challenge, and Design Goals were established to guide the solution toward
+                    an interface that supports the natural TCM consultation flow. User Journey Maps captured the
+                    end-to-end patient experience from booking to prescription fulfillment.
+                </p>
+                <div class="mt-16" style="margin-top: 32px;">
+                    <img src="../assets/HerbaMed.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    The ideation phase explored how to structure TCM-specific data within a clinic management system
+                    without overwhelming practitioners with complex forms. User Flows mapped the key interactions for
+                    TCM doctors and clinic staff, covering patient registration, consultation documentation, herbal
+                    prescription creation, and inventory management. A Sitemap organized the platform's features
+                    around the clinical workflow rather than administrative categories, ensuring that the most
+                    frequently used functions were easily accessible during consultations.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../assets/HerbaMed.jpg" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../assets/HerbaMed.jpg" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Low-fidelity wireframes were first developed to validate the layout structure and navigation flow
+                    for key screens including the patient profile, TCM consultation form, herbal prescription builder,
+                    and inventory dashboard. High-fidelity designs then refined the visual language, incorporating
+                    a warm, earthy color palette to reflect the TCM identity while maintaining clinical professionalism.
+                    An interactive prototype was built to simulate the complete patient consultation workflow for
+                    user testing and stakeholder review.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../assets/HerbaMed.jpg" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted with TCM practitioners to evaluate how well the interface
+                        supported real consultation workflows. Participants were asked to complete a full patient
+                        consultation scenario — from accessing the patient profile to generating an herbal prescription.
+                        Testing focused on identifying usability issues in the TCM diagnostic documentation flow and
+                        the prescription builder. Feedback was used to simplify complex form interactions and improve
+                        the clarity of TCM-specific terminology within the interface.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Faster TCM Documentation
+                            — Practitioners completed consultation records significantly faster compared to their existing methods.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Reduced Prescription Errors
+                            — The guided herbal prescription builder reduced ingredient entry mistakes during testing.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Clinical Flow
+                            — Users confirmed that the consultation interface matched their natural TCM diagnostic process.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Positive Inventory Visibility
+                            — Clinic staff appreciated having real-time herb stock levels visible during prescription creation.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The HerbaMed Design System uses a warm, earthy palette inspired by
+                        traditional herbal medicine to create a calm, trustworthy interface. It includes color tokens,
+                        typography, spacing, reusable components, and icon guidelines that maintain consistency
+                        across all clinic management workflows.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        HerbaMed's visual direction draws from the warmth and tradition of Chinese medicine, using
+                        earthy tones, natural textures, and clean layouts to balance the heritage of TCM with the
+                        clarity required in a clinical tool. The interface feels grounded, professional, and approachable —
+                        giving practitioners confidence while working through complex clinical documentation.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../assets/MAT (1).jpg" alt="Mood 1" class="rounded-img">
+                    <img src="../assets/MAT (2).jpg" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../assets/HerbaMed.jpg" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

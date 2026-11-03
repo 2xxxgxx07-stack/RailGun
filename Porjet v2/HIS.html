@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HospiCore Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">HospiCore</span>
+            </h1>
+            <p style="max-width: 800px;">
+                HospiCore is a comprehensive, multi-module enterprise platform designed to support core hospital
+                operations including Patient Registration, OPD, IPD, Nursing, Pharmacy, Laboratory, Referrals,
+                Billing, and Executive Dashboards — unifying the entire hospital information system under
+                a consistent and intuitive interface.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=321-126550&viewport=396%2C255%2C0.5&t=j8FY51RGV5Nq0A8f-0&scaling=contain&content-scaling=fixed&starting-point-node-id=321%3A126550"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="#" class="btn" style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+                    alt="Hospital" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80"
+                    alt="Medical Equipment" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=500&q=80" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&q=80" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/HospiCore.jpg" alt="HospiCore Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    HospiCore is an enterprise hospital information system designed to unify all core hospital
+                    operations under a single, consistent platform. The system covers the full patient lifecycle
+                    from registration through outpatient and inpatient care, nursing, pharmacy, laboratory,
+                    billing, and executive reporting. The project addresses the fragmented UX patterns and
+                    inconsistent UI across existing multi-module hospital systems, aiming to reduce clinical
+                    errors and operational inefficiency through a unified, role-based interface.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The design process began with research across multiple hospital departments to understand
+                    how different roles interact with the hospital information system throughout the patient
+                    journey. Research revealed significant UX inconsistencies between modules and the cognitive
+                    load placed on users who must operate across different parts of the system simultaneously.
+                    These insights shaped a unified design system and role-based interface architecture that
+                    was developed through wireframes and high-fidelity prototypes tested with clinical staff
+                    across departments.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    HospiCore addresses the enterprise HIS challenge by establishing a unified design system
+                    and consistent interaction patterns across all modules. Each department's interface is
+                    tailored to its specific workflow while sharing the same navigation structure, component
+                    library, and data presentation conventions. The concept centers on Unified Experience,
+                    Role-Based Access, Cross-Module Data Continuity, and Scalable Architecture to support
+                    growing hospital operations without fragmenting the user experience.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research involved engaging with staff across Registration, OPD, IPD, Nursing, Pharmacy,
+                    and Laboratory departments to understand how each role uses the hospital system and where
+                    friction occurs. Users across all departments described navigating between system modules
+                    with different UI conventions, learning multiple interaction patterns for similar tasks,
+                    and dealing with data that did not transfer seamlessly between departments. User Personas
+                    were developed for key clinical and administrative roles. Empathy Maps captured the
+                    frustration of working within a fragmented enterprise system under time constraints and
+                    the impact on care quality and operational efficiency.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona.jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona 2.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Three primary challenges were defined: enterprise hospital systems with fragmented modules
+                    and inconsistent UI patterns, complex clinical workflows requiring management of massive
+                    datasets under strict time constraints, and poor data hierarchy with unclear system feedback
+                    increasing clinical error risk. Problem Statements and Design Goals were established to
+                    guide the solution toward a unified interface that maintains consistency across all modules
+                    while supporting each department's specific workflow. User Journey Maps traced patient
+                    pathways across multiple departments to identify data continuity requirements and
+                    inter-departmental workflow dependencies.
+                </p>
+                <div class="mt-16" style="margin-top: 32px;">
+                    <img src="../assets/HospiCore.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Ideation focused on how to create a unified platform architecture that supports the diverse
+                    needs of multiple hospital departments without creating a complex, difficult-to-navigate
+                    system. User Flows were developed for the core workflows of each department, identifying
+                    shared interaction patterns that could be standardized across the platform. A comprehensive
+                    Sitemap organized HospiCore's modules around the patient lifecycle, ensuring that information
+                    flowed naturally between departments as patients progressed through different stages of care.
+                    The design system architecture was established to ensure visual and functional consistency
+                    across all modules.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../assets/HospiCore.jpg" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../assets/HospiCore.jpg" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Wireframes were developed for key screens across Registration, OPD, IPD Nursing, Pharmacy,
+                    Laboratory, and Billing modules to validate layout consistency and cross-module navigation.
+                    High-fidelity designs applied the HospiCore design system across all modules, demonstrating
+                    how shared components, navigation patterns, and data presentation conventions create a
+                    unified experience across a complex enterprise system. Interactive prototypes simulated
+                    cross-departmental patient workflows for usability testing with multi-role hospital teams.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../assets/HospiCore.jpg" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted across multiple department-specific scenarios with
+                        clinical and administrative staff from Registration, Nursing, Pharmacy, and Billing.
+                        Testing evaluated how effectively the unified interface reduced the learning curve
+                        for new modules, how well data transferred between departments, and whether the
+                        role-based interface surfaced the right information for each user's responsibilities.
+                        Feedback drove refinements to navigation clarity, data hierarchy, and cross-module
+                        information continuity.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Reduced Module Learning Curve
+                            — Consistent navigation and component patterns allowed staff to use new modules faster than with the previous system.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Data Continuity
+                            — Patient information transferred seamlessly between department modules, reducing duplicate data entry.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Clearer Information Hierarchy
+                            — Clinical staff confirmed that the redesigned data presentation reduced the time needed to locate critical patient information.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Consistent Cross-Module Experience
+                            — Users reported significantly less confusion when moving between different functional modules of HospiCore.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The HospiCore Design System is an enterprise-scale library
+                        that establishes visual and functional consistency across all hospital modules. It
+                        includes a comprehensive component library, role-based UI patterns, department-specific
+                        data display guidelines, and a scalable design token system that allows the platform
+                        to grow without fragmenting the user experience.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        HospiCore's visual direction is authoritative, structured, and reliable. As an enterprise
+                        system used across an entire hospital organization, the interface must communicate
+                        professionalism and clarity at every level. The design uses a structured layout with
+                        clear data hierarchy, consistent component patterns, and a neutral palette that supports
+                        long periods of focused clinical and administrative work.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../assets/HIS (1).jpg" alt="Mood 1" class="rounded-img">
+                    <img src="../assets/HIS (2).jpg" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../assets/HospiCore.jpg" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

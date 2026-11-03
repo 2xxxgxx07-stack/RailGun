@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediQueue Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">MediQueue</span>
+            </h1>
+            <p style="max-width: 800px;">
+                MediQueue is a smart queue and scheduling platform connecting patients, doctors, and clinic staff
+                to eliminate long hospital waiting times and streamline daily appointments. It brings transparency
+                to the queue process and empowers both patients and staff with real-time information.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=321-126538&viewport=-1873%2C5524%2C0.32&t=j8FY51RGV5Nq0A8f-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=321%3A126538"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="#" class="btn" style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+                    alt="Hospital" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80"
+                    alt="Medical Equipment" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=500&q=80" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&q=80" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/MediQueue.png" alt="MediQueue Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    MediQueue is a queue management and appointment scheduling platform designed to reduce wait times
+                    and improve the overall patient experience at hospitals and clinics. The system connects patients,
+                    doctors, and administrative staff with real-time queue tracking, appointment booking, and
+                    automated notifications. The project focuses on eliminating manual queue processes, reducing
+                    patient anxiety during waiting, and providing operational analytics for clinic management.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The design process started with research into how patients and clinic staff currently experience
+                    the queue and appointment system. Observations at hospital reception areas and interviews with
+                    patients, nurses, and administrative staff revealed pain points around uncertainty, manual
+                    coordination, and high workload. These insights were translated into user flows, information
+                    architecture, and interface concepts, with wireframes and prototypes developed and tested
+                    iteratively to ensure the solution served both patients and clinic operations.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    MediQueue brings transparency and intelligence to the queue process. Patients can book
+                    appointments, track their queue position in real time, and receive proactive notifications
+                    about their turn — reducing unnecessary time spent waiting in the clinic. Clinic staff gain
+                    a centralized dashboard to monitor and manage queues across departments, track doctor
+                    availability, and handle walk-in patients alongside scheduled appointments. The concept
+                    centers on Transparent Waiting, Efficient Scheduling, and Streamlined Operations.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research explored the emotional and practical experience of patients waiting in hospital queues
+                    and the operational challenges faced by clinic administrative staff. Patients reported high
+                    anxiety from unpredictable wait times and a lack of information about their position in the
+                    queue. Staff described the difficulty of managing walk-in patients, appointment no-shows,
+                    and queue disruptions manually across multiple channels. User Personas were developed for
+                    patients, clinic staff, and doctors, each with distinct goals and frustrations. Empathy Maps
+                    revealed the emotional states and unmet needs that shaped the design priorities for MediQueue.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona.jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../assets/User persona 2.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Key challenges were defined for each user group. Patients needed real-time visibility into
+                    their queue position and estimated wait times. Staff needed tools to manage mixed appointment
+                    and walk-in queues without manual tracking across disconnected systems. Doctors needed to
+                    stay informed about their queue without disrupting their consultation flow. Problem Statements
+                    and Design Goals were established to guide the solution toward reducing wait time uncertainty,
+                    improving operational efficiency, and enabling proactive communication between patients
+                    and clinic staff. Journey Maps captured the full patient experience from booking to consultation.
+                </p>
+                <div class="mt-16" style="margin-top: 32px;">
+                    <img src="../assets/MediQueue.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Ideation focused on how to make queue information immediately available to all stakeholders
+                    without requiring complex interactions. User Flows mapped the appointment booking journey
+                    for patients, the queue management workflow for staff, and the doctor's consultation readiness
+                    flow. A Sitemap organized the platform into a patient-facing mobile experience and a
+                    staff-facing web dashboard, ensuring that features were logically grouped by role and task
+                    rather than by system function. Key interactions such as queue notifications, appointment
+                    rescheduling, and doctor availability updates were designed to minimize manual intervention.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../assets/MediQueue.png" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px; object-fit: contain;">
+                    <img src="../assets/MediQueue.png" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Low-fidelity wireframes validated the layout and flow for the patient-facing queue tracker,
+                    appointment booking screens, and the staff queue management dashboard. High-fidelity designs
+                    introduced the visual design system, real-time status indicators, notification patterns, and
+                    queue number displays. An interactive prototype connected the patient booking flow, queue
+                    tracking view, and staff management dashboard to simulate a complete MediQueue experience
+                    for usability testing.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../assets/MediQueue.png" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted with patients and clinic staff using the prototype. Patient
+                        testing focused on the appointment booking flow, queue tracking visibility, and notification
+                        clarity. Staff testing evaluated how quickly team members could manage a combined walk-in
+                        and appointment queue. Feedback from both groups informed refinements to the notification
+                        timing, queue status display, and the interface for handling queue disruptions or
+                        doctor delays.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Reduced Patient Anxiety
+                            — Real-time queue visibility significantly reduced patient uncertainty about waiting times.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Staff Efficiency
+                            — Staff were able to manage queues faster using the centralized dashboard compared to manual methods.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Clear Queue Status
+                            — Patients and staff confirmed that queue position and estimated wait times were easy to understand.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Effective Notifications
+                            — Proactive alerts helped patients return to the clinic at the right time, reducing no-shows.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The MediQueue Design System supports both a patient-facing mobile
+                        interface and a staff-facing web dashboard. It includes color tokens, typography, spacing,
+                        queue status components, notification patterns, and interactive elements designed to
+                        communicate real-time information clearly across both platforms.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        MediQueue's visual direction is calm, clear, and reassuring. Since the platform is used
+                        by patients experiencing the stress of waiting, the design uses a clean layout, clear
+                        status indicators, and approachable visual language to reduce anxiety and build confidence
+                        in the process. The staff interface uses a more functional, data-dense layout optimized
+                        for operational clarity and speed.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../assets/MAT (1).jpg" alt="Mood 1" class="rounded-img">
+                    <img src="../assets/MAT (2).jpg" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../assets/MediQueue.png" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

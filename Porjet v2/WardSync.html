@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardSync Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">WardSync</span>
+            </h1>
+            <p style="max-width: 800px;">
+                WardSync is an Inpatient Ward Management System designed to support collaboration between doctors,
+                nurses, and pharmacists. It centralizes patient information, treatment plans, medical orders, and
+                nursing records in one platform, helping healthcare teams manage patient care more efficiently and
+                seamlessly.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=24-10959&p=f&viewport=1998%2C3830%2C0.12&t=7VLL30LctsijdmId-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=55%3A5716&show-proto-sidebar=1"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Protype</a>
+                <a href="https://canva.link/t3xps5eu6vwzb7r" target="_blank" class="btn"
+                    style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View
+                    Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=80"
+                    alt="Hospital Corridor" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500&q=80"
+                    alt="Medical Equipment" class="rounded-img">
+                <img src="https://i.pinimg.com/736x/0c/a7/8e/0ca78ec1a42bfda2b1019b8753d5fe69.jpg" class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=500&q=80" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500&q=80" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&q=80" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../Persona Wardsysce/Research.png" alt="Persona" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    WardSync is a hospital ward management system designed to connect healthcare professionals and
+                    simplify the clinical workflow. The system supports nurses, doctors, and pharmacists in accessing
+                    patient information, managing clinical tasks, reviewing medical orders, and coordinating patient
+                    care. The project focuses on reducing fragmented information and unnecessary workflow steps while
+                    improving information visibility and collaboration across different healthcare roles. Through a
+                    user-centered design approach, WardSync aims to create a more efficient, clear, and safer experience
+                    for healthcare professionals.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The project followed a Design Thinking approach to understand users, define key problems, explore
+                    solutions, and validate the design. I conducted research to understand the workflows and challenges
+                    of nurses, doctors, and pharmacists. These insights were translated into personas, empathy maps,
+                    problem statements, and user journey maps. I then explored the information architecture, sitemap,
+                    and user flows before developing wireframes and high-fidelity prototypes. Usability testing and user
+                    feedback were used to identify usability issues and refine the final solution.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    The concept of WardSync is built around a Unified Clinical Workflow, bringing critical patient
+                    information and related tasks into a more connected experience. Instead of requiring users to
+                    navigate through multiple areas of the system, relevant information is organized around the
+                    patient's care journey. Doctors can review clinical information and create orders, pharmacists can
+                    verify medication and allergy information, while nurses can receive orders, complete care tasks, and
+                    document patient information. The solution focuses on Centralized Information, Simplified Workflow,
+                    Clear Status, and Cross-Team Collaboration.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    To better understand the challenges of healthcare professionals, I started by studying the daily
+                    workflows of nurses, doctors, and pharmacists. Through user research, I explored how each role
+                    accesses patient information, manages clinical tasks, and collaborates with other teams. The
+                    research revealed that each role has different priorities but relies on the same patient information
+                    throughout the care process. Nurses focus on patient care and documentation, doctors on clinical
+                    decisions, and pharmacists on medication safety. I used User Personas to represent their goals,
+                    behaviors, and challenges. Empathy Maps were then created to understand what users say, think, do,
+                    and feel during their workflow. These insights became the foundation for identifying key problems
+                    and opportunities for WardSync.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../Persona Wardsysce/1.jpg" alt="Persona 1" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../Persona Wardsysce/Persona Wardsync.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Based on the research findings, I identified several challenges across the clinical workflow,
+                    particularly around information access, task management, and collaboration. Nurses needed to manage
+                    large amounts of patient information while completing tasks and handovers. Doctors needed to quickly
+                    review clinical data from multiple sources before making treatment decisions. Pharmacists needed to
+                    verify medication orders and allergy information before dispensing medication. These challenges
+                    highlighted a common issue: critical information was distributed across different parts of the
+                    workflow. I used Problem Statements to clearly define the challenges faced by each user role. Design
+                    Goals and User Journey Maps were then created to identify opportunities for improving the overall
+                    clinical experience.
+                </p>
+                <div class="mt-16 define-image-grid" style="gap: 16px; margin-top: 32px;">
+                    <img src="../Persona Wardsysce/PS1.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../Persona Wardsysce/PS2.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../Persona Wardsysce/PS3.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../Persona Wardsysce/Design Goal.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../Persona Wardsysce/User journeymap.png" alt="Journey" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 300px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    After defining the key problems, I explored different ways to simplify the clinical workflow and
+                    improve collaboration between healthcare professionals. I focused on creating a more connected
+                    experience where users could access relevant patient information without unnecessary navigation.
+                    User Flows were created to map the key actions and interactions for each role, from accessing
+                    patient information to completing clinical tasks. I also developed a Sitemap to organize the
+                    system's information architecture and ensure that features were grouped logically. The structure was
+                    designed around real user tasks rather than simply organizing features by system functions. This
+                    helped establish a clear foundation for the interface and ensured that the proposed solution could
+                    support different clinical workflows.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../Persona Wardsysce/User Flow.png" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../Persona Wardsysce/Sitem map.png" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    I translated the proposed workflows and information architecture into interface concepts through an
+                    iterative prototyping process. I started with Low-Fidelity Wireframes to explore layout, content
+                    hierarchy, navigation, and task flows without focusing heavily on visual details. After reviewing
+                    the structure, I developed High-Fidelity Designs that incorporated the visual design system,
+                    components, information hierarchy, and interaction patterns. Key screens were designed around the
+                    most important tasks for nurses, doctors, and pharmacists. The prototype connected these screens
+                    into realistic workflows to simulate how users would interact with WardSync in their daily work.
+                    This allowed the design to be evaluated and refined before moving toward the final solution.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../Persona Wardsysce/Lo-fi.png" alt="Prototype Screen 1" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                    <img src="../Persona Wardsysce/Hi-fi.png" alt="Prototype Screen 2" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        The prototype was evaluated through usability testing to understand how effectively users could
+                        complete their key tasks. Testing focused on common clinical scenarios such as reviewing patient
+                        information, checking clinical results, managing medication orders, and completing nursing
+                        tasks. Users were asked to perform tasks using the prototype while their interactions,
+                        difficulties, and feedback were observed. The testing helped identify areas where information
+                        was difficult to find, actions were unclear, or workflows required unnecessary steps. I used
+                        these findings to prioritize usability issues based on their impact on the user's workflow. The
+                        design was then iterated based on the feedback to improve clarity, efficiency, and overall
+                        usability.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul
+                        style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Information
+                            Discoverability — Users were able to locate key patient information more easily through a
+                            centralized patient overview.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Clearer Clinical
+                            Workflow — The redesigned workflow helped users understand what actions needed to be
+                            completed at each stage.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Better Information
+                            Hierarchy — Important information such as Vital Signs, Lab Results, Medication Orders, and
+                            Allergy History became easier to identify.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>More Visible Primary
+                            Actions — Key actions such as reviewing orders, confirming medication, and updating patient
+                            information were easier to discover.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The WardSync Design System was created to maintain consistency,
+                        scalability, and usability across the application. It includes foundational elements such as
+                        color, typography, spacing, icons, and grid systems, as well as reusable UI components for
+                        common clinical workflows. Components such as buttons, input fields, cards, tables, navigation,
+                        status indicators, alerts, and patient information modules were designed with different states
+                        and use cases in mind. The system helps maintain a consistent visual language across different
+                        user roles while allowing the interface to scale as new features and workflows are introduced.
+                    </p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Roboto</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        The visual direction of WardSync focuses on creating an interface that feels professional,
+                        trustworthy, calm, and easy to understand. Since the system is used in a healthcare environment
+                        where users work under time pressure, the design avoids unnecessary visual complexity and
+                        emphasizes clarity and information hierarchy. A clean layout, balanced spacing, subtle visual
+                        elements, and clear status indicators help users quickly identify important information and
+                        actions.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../Persona Wardsysce/MT1.png" alt="Mood 1" class="rounded-img">
+                    <img src="../assets/MAT (2).jpg" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../Persona Wardsysce/Mockup  v2.jfif" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

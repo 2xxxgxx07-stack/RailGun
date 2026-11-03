@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me • RailGun (Kantaphon) | UX/UI Designer</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts: Modern Plus Jakarta Sans + Anuphan (Modern Loopless Thai) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-display: 'Plus Jakarta Sans', 'Anuphan', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', 'Anuphan', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #f9f9fa;
+      color: #1a1c1d;
+      overflow-x: hidden;
+      letter-spacing: -0.015em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-serif-display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    /* Scroll progress bar - Luxury Emerald Glow */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981 0%, #111827 50%, #10b981 100%);
+      background-size: 200% 100%;
+      width: 0%;
+      z-index: 100;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+      transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Watermark text styling with smooth parallax */
+    .watermark-hero {
+      font-family: var(--font-body);
+      color: rgba(0, 0, 0, 0.032);
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* Green pulse indicator */
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.4; }
+    }
+    .status-dot {
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    /* Header Scrolled Elevation */
+    header.scrolled {
+      box-shadow: 0 10px 30px -10px rgba(17, 24, 39, 0.08);
+      background-color: rgba(249, 249, 250, 0.95);
+    }
+
+    /* Precision Card Elevation */
+    .editorial-card {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 3px rgba(17, 24, 39, 0.04), 0 6px 16px -4px rgba(17, 24, 39, 0.03);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .editorial-card:hover {
+      transform: translateY(-5px);
+      border-color: #d1d5db;
+      box-shadow: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 20px 32px -8px rgba(17, 24, 39, 0.08);
+    }
+
+    /* Luxury Scroll Reveal System */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.96) translateY(24px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Stagger Delays for Grid Children */
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-6 { transition-delay: 0.48s; }
+  </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white relative bg-[#f9f9fa]">
+
+  <!-- Top Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ================= TOP HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo / Identity -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+        <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+        <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+      </a>
+
+      <!-- Center Minimal Capsule Navigation -->
+      <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+        <a href="index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          home
+        </a>
+        <a href="projects.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          Project
+        </a>
+        <a href="about.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+          About Me
+        </a>
+        <a href="contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          contact
+        </a>
+      </nav>
+
+      <!-- Right Action & Mobile Toggle -->
+      <div class="flex items-center gap-2.5">
+        <a href="contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+          <span>contact</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer / Dropdown -->
+    <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+      <a href="projects.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">Project</a>
+      <a href="about.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">About Me</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-28">
+
+    <!-- HERO SECTION -->
+    <section class="relative mb-20">
+      <!-- Watermark Background -->
+      <div class="absolute -top-10 left-0 right-0 overflow-hidden pointer-events-none select-none z-0">
+        <span class="text-[14vw] font-bold watermark-hero uppercase leading-none block tracking-tighter whitespace-nowrap">
+          PROFILE // ABOUT ME
+        </span>
+      </div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-4 sm:pt-8">
+        
+        <!-- Left Portrait Showcase -->
+        <div class="lg:col-span-5 relative order-2 lg:order-1 reveal-scale">
+          <div class="relative bg-white border border-[#e5e7eb] rounded-2xl p-3 shadow-lg">
+            <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-gray-100">
+              <img src="assets/me (1).png" alt="Kantaphon Chapchainai" class="w-full h-full object-cover object-top">
+            </div>
+
+            <div class="p-4 bg-white space-y-2">
+              <div class="flex items-center justify-between text-xs">
+                <span class="font-bold text-[#111827]">Kantaphon Chapchainai</span>
+                <span class="text-emerald-700 font-medium flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Open to Work</span>
+              </div>
+              <p class="text-[11px] text-[#76777d]">Bangkok, Thailand • UX/UI Designer & Design System Specialist</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Bio -->
+        <div class="lg:col-span-7 space-y-6 order-1 lg:order-2 reveal stagger-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>UX/UI Designer • Healthcare & Enterprise Systems</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl font-serif-display text-[#111827] leading-[1.15] tracking-tight">
+            Hi, I'm Kantaphon.<br>
+            <span class="text-gray-400 font-normal">Crafting purposeful digital experiences.</span>
+          </h1>
+
+          <!-- Greeting Box -->
+          <div class="editorial-card p-6 border-l-4 border-l-[#111827]">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-[#111827] mb-2 flex items-center gap-2">
+              <span>สวัสดีครับ</span>
+              <span class="text-xs text-[#76777d] font-normal">(เรียกผมว่า "กันต์" ก็ได้ครับ)</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed">
+              ผมเป็น UX/UI Designer ที่มีความเชี่ยวชาญในการออกแบบผลิตภัณฑ์ระบบโรงพยาบาลและ Enterprise Platform ที่มีความซับซ้อนสูง ให้กลายเป็นหน้าจอที่ใช้งานง่าย มีประสิทธิภาพ และสอดคล้องกับการทำงานจริงของบุคลากรหน้างาน ผมให้ความสำคัญกับการรับฟังความคิดเห็นจากคนในทีม เพราะความสำเร็จที่ยั่งยืนเกิดจากการทำงานร่วมกันเป็นทีมเดียวกันครับ
+            </p>
+          </div>
+
+          <!-- Quick Highlight Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="bg-white border border-[#e5e7eb] rounded-lg p-3">
+              <span class="text-[10px] uppercase font-semibold text-[#76777d] block">Focus</span>
+              <span class="text-xs font-bold text-[#111827]">Healthcare & EMR</span>
+            </div>
+            <div class="bg-white border border-[#e5e7eb] rounded-lg p-3">
+              <span class="text-[10px] uppercase font-semibold text-[#76777d] block">Collaboration</span>
+              <span class="text-xs font-bold text-[#111827]">BA / SA / Dev Team</span>
+            </div>
+            <div class="bg-white border border-[#e5e7eb] rounded-lg p-3">
+              <span class="text-[10px] uppercase font-semibold text-[#76777d] block">Mindset</span>
+              <span class="text-xs font-bold text-[#111827]">Data & User-Driven</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE SKILLS SECTION -->
+    <section class="mb-24">
+      <div class="flex items-center gap-2 mb-2 reveal">
+        <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#76777d]">Skillsets</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-serif-display text-[#111827] mb-8 reveal">
+        ทักษะและความเชี่ยวชาญหลัก
+      </h2>
+
+      <!-- 3 Core Skill Cards with Staggered Motion -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        
+        <!-- Card 1: UX Design -->
+        <div class="editorial-card p-6 flex flex-col justify-between reveal stagger-1">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-[#f3f4f6] flex items-center justify-center text-[#111827] mb-4">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-[#111827] mb-3">UX Design</h3>
+            <ul class="space-y-2 text-xs text-[#45464c]">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> User Research & Interviews</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> User Flow & Task Analysis</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Information Architecture</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Wireframing (Low-Fi)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Interactive Prototyping</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Usability Testing</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Design Thinking Process</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] text-[#76777d]">
+            Focus: ลดความสับสนและข้อผิดพลาดในการทำงาน
+          </div>
+        </div>
+
+        <!-- Card 2: UI Design -->
+        <div class="editorial-card p-6 flex flex-col justify-between reveal stagger-2">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-[#f3f4f6] flex items-center justify-center text-[#111827] mb-4">
+              <i data-lucide="palette" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-[#111827] mb-3">UI Design</h3>
+            <ul class="space-y-2 text-xs text-[#45464c]">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Visual Design & Aesthetics</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Design System & UI Libraries</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Responsive & Adaptive Layout</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Component Token Architecture</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Micro-interaction Design</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Typography & Visual Hierarchy</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Accessibility (WCAG 2.1)</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] text-[#76777d]">
+            Focus: ความสวยงาม ทันสมัย และอ่านง่ายสบายตา
+          </div>
+        </div>
+
+        <!-- Card 3: Product Thinking -->
+        <div class="editorial-card p-6 flex flex-col justify-between reveal stagger-3">
+          <div>
+            <div class="w-10 h-10 rounded-lg bg-[#f3f4f6] flex items-center justify-center text-[#111827] mb-4">
+              <i data-lucide="brain" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-[#111827] mb-3">Product Thinking</h3>
+            <ul class="space-y-2 text-xs text-[#45464c]">
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Strategic Problem Solving</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> User-Centered Design (UCD)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Business & User Need Alignment</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Requirement Analysis & PRD</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Feature Prioritization (MoSCoW)</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Cross-functional Collaboration</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Developer Handoff Quality</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] text-[#76777d]">
+            Focus: ตอบโจทย์เป้าหมายธุรกิจและแก้ปัญหาผู้ใช้จริง
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 6 UX Artifact Screenshots Gallery -->
+      <div class="editorial-card p-6 reveal">
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-[#76777d] mb-4">Design Artifacts & Wireframing Gallery</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+            <img src="assets/Abount me UX  (12).jpg" alt="UX Artifact" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+            <img src="assets/Abount me UX  (2).jpg" alt="UX Artifact" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+            <img src="assets/Abount me UX  (4).jpg" alt="UX Artifact" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+            <img src="assets/Abount me UX  (9).jpg" alt="UX Artifact" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+            <img src="assets/Abount me UX  (7).jpg" alt="UX Artifact" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+            <img src="assets/Abount me UX  (11).jpg" alt="UX Artifact" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS & TECHNOLOGIES SECTION -->
+    <section class="mb-24">
+      <div class="flex items-center gap-2 mb-2 reveal">
+        <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#76777d]">Stack & Capabilities</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-serif-display text-[#111827] mb-8 reveal">
+        เครื่องมือและเทคโนโลยีที่เชี่ยวชาญ (13 Programs)
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Group 1: Design & Prototyping -->
+        <div class="editorial-card p-6 reveal stagger-1">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+            <h3 class="text-sm font-bold text-[#111827]">Design & Prototyping</h3>
+            <span class="text-[11px] font-mono text-[#76777d]">6 Tools</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="figma" class="w-4 h-4 text-[#111827]"></i> Figma</span>
+              <span class="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Expert</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="layout" class="w-4 h-4 text-[#76777d]"></i> FigJam</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="image" class="w-4 h-4 text-[#76777d]"></i> Adobe Photoshop</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="pen-tool" class="w-4 h-4 text-[#76777d]"></i> Adobe Illustrator</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4 text-[#76777d]"></i> Adobe XD</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="video" class="w-4 h-4 text-[#76777d]"></i> Premiere Pro</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 2: Frontend & Engineering -->
+        <div class="editorial-card p-6 reveal stagger-2">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+            <h3 class="text-sm font-bold text-[#111827]">Frontend Engineering</h3>
+            <span class="text-[11px] font-mono text-[#76777d]">5 Stacks</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="code-2" class="w-4 h-4 text-[#111827]"></i> HTML5 & Semantic Web</span>
+              <span class="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Expert</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4 text-[#76777d]"></i> CSS3 & Modern Flex/Grid</span>
+              <span class="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Expert</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="wind" class="w-4 h-4 text-[#76777d]"></i> Tailwind CSS</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Advanced</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="file-code" class="w-4 h-4 text-[#76777d]"></i> JavaScript (ES6+)</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Proficient</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="component" class="w-4 h-4 text-[#76777d]"></i> React & Components</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Proficient</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Group 3: Productivity & Workflow -->
+        <div class="editorial-card p-6 reveal stagger-3">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
+            <h3 class="text-sm font-bold text-[#111827]">Workflow & AI Tools</h3>
+            <span class="text-[11px] font-mono text-[#76777d]">2 + AI</span>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 text-[#111827]"></i> Notion</span>
+              <span class="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Documentation</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="github" class="w-4 h-4 text-[#76777d]"></i> GitHub & Git Versioning</span>
+              <span class="text-[11px] font-mono text-[#76777d]">Collaboration</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-[#111827] flex items-center gap-2"><i data-lucide="sparkles" class="w-4 h-4 text-[#76777d]"></i> Antigravity & LLM Tools</span>
+              <span class="text-[11px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Agentic Workflow</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section class="mb-24">
+      <div class="flex items-center gap-2 mb-2 reveal">
+        <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#76777d]">Career History</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-serif-display text-[#111827] mb-8 reveal">
+        ประสบการณ์การทำงาน
+      </h2>
+
+      <div class="space-y-8">
+        
+        <!-- Experience 1: Current -->
+        <div class="editorial-card p-6 sm:p-8 reveal stagger-1">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-gray-100">
+            <div>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 inline-block mb-1">ปัจจุบัน</span>
+              <h3 class="text-xl font-bold text-[#111827]">UX/UI Designer</h3>
+              <p class="text-xs text-[#76777d]">Healthcare Application Development</p>
+            </div>
+            <span class="text-xs font-mono text-[#76777d]">Hospital Platform Project</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed mb-6">
+            ออกแบบและพัฒนา UX/UI สำหรับผลิตภัณฑ์ด้านโรงพยาบาล โดยวิเคราะห์ Workflow และการทำงานจริงของบุคลากรแต่ละบทบาท ร่วมกับ TA, BA และ SA ในการระดมความคิด วิเคราะห์ Pain Point และออกแบบแนวทางแก้ไขที่ตอบโจทย์ผู้ใช้งาน เปลี่ยนความต้องการทางธุรกิจและกระบวนการทำงานที่ซับซ้อน ให้เป็น User Flow และ Interface ที่ใช้งานง่าย มีประสิทธิภาพ พร้อมทำงานร่วมกับทีม Developer อย่างใกล้ชิดเพื่อส่งมอบ Design ที่สอดคล้องกับระบบจริง
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="aspect-[16/9] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+              <img src="assets/Abount me EXP (3).jpg" alt="Experience Photo 1" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[16/9] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+              <img src="assets/Abount me EXP (11).jpg" alt="Experience Photo 2" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: 2025 -->
+        <div class="editorial-card p-6 sm:p-8 reveal stagger-2">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-gray-100">
+            <div>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-[#45464c] inline-block mb-1">2025</span>
+              <h3 class="text-xl font-bold text-[#111827]">UX/UI Designer</h3>
+              <p class="text-xs text-[#76777d]">Enterprise Digital Solutions</p>
+            </div>
+            <span class="text-xs font-mono text-[#76777d]">Internal Systems & Branding</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed mb-6">
+            ออกแบบ UI ตาม Requirement และโจทย์ที่ได้รับมอบหมาย ให้สอดคล้องกับการใช้งานจริงภายในองค์กร ระดมความคิดและแลกเปลี่ยนแนวทางแก้ไขปัญหาร่วมกับทีมออกแบบและทีมพัฒนา เพื่อให้ได้ Solution ที่เหมาะสม จัดทำ Graphic Design และสื่อประกอบต่าง ๆ เพื่อสนับสนุนการสื่อสารและการทำงานภายในองค์กร
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="aspect-[16/9] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+              <img src="assets/Abount me EXP (8).jpg" alt="Experience Photo 3" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[16/9] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+              <img src="assets/Abount me EXP (10).jpg" alt="Experience Photo 4" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3: 2021 -->
+        <div class="editorial-card p-6 sm:p-8 reveal stagger-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 pb-4 border-b border-gray-100">
+            <div>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-[#45464c] inline-block mb-1">2021</span>
+              <h3 class="text-xl font-bold text-[#111827]">ผู้ช่วยฝ่ายอำนวยการยุทธการ</h3>
+              <p class="text-xs text-[#76777d]">Graphic Design & Media Production</p>
+            </div>
+            <span class="text-xs font-mono text-[#76777d]">Visual Communication</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed mb-6">
+            ปฏิบัติหน้าที่ด้าน Graphic Design และ Video Editing ตามที่ได้รับมอบหมาย เพื่อสนับสนุนภารกิจและการดำเนินงานของหน่วยงาน ออกแบบสื่อประชาสัมพันธ์ เอกสาร และภาพประกอบ รวมถึงตัดต่อวิดีโอสำหรับกิจกรรมและการฝึกอบรมต่าง ๆ ประสานงานและทำงานร่วมกับทีมเพื่อจัดทำสื่อและสนับสนุนภารกิจให้มีความถูกต้อง ชัดเจน
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="aspect-[16/9] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+              <img src="assets/Abount me EXP (5).jpg" alt="Experience Photo 5" class="w-full h-full object-cover">
+            </div>
+            <div class="aspect-[16/9] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+              <img src="assets/Abount me EXP (4).jpg" alt="Experience Photo 6" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATES SECTION -->
+    <section class="mb-24">
+      <div class="flex items-center gap-2 mb-2 reveal">
+        <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#76777d]">Background</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-serif-display text-[#111827] mb-8 reveal">
+        การศึกษาและประกาศนียบัตร
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Education Cards -->
+        <div class="lg:col-span-7 space-y-4">
+          
+          <div class="editorial-card p-6 reveal stagger-1">
+            <span class="text-[11px] font-mono text-[#76777d] block mb-1">MAY 2024 – APR 2025</span>
+            <h3 class="text-base font-bold text-[#111827]">Southeast Asia University × WeStride Bootcamp</h3>
+            <p class="text-xs font-medium text-emerald-700 mb-2">UX/UI Designer & Developer Program</p>
+            <p class="text-xs text-[#45464c] leading-relaxed">
+              หลักสูตรเข้มข้นที่เน้นการปฏิบัติจริงด้าน UX/UI Design, User Research, Design Thinking, Prototyping และ Front-end Web Development ผ่านโปรเจกต์และการแก้ปัญหาตามโจทย์ทางธุรกิจจริง
+            </p>
+          </div>
+
+          <div class="editorial-card p-6 reveal stagger-2">
+            <span class="text-[11px] font-mono text-[#76777d] block mb-1">AUG – OCT 2022</span>
+            <h3 class="text-base font-bold text-[#111827]">Mahidol University</h3>
+            <p class="text-xs font-medium text-emerald-700 mb-2">UX Design for Mobile Application Development</p>
+            <p class="text-xs text-[#45464c] leading-relaxed">
+              ศึกษาหลักการออกแบบประสบการณ์ผู้ใช้สำหรับสมาร์ตโฟนและแท็บเล็ต ครอบคลุม User-Centered Design, Wireframing, และหลักการ Usability & Accessibility บนอุปกรณ์เคลื่อนที่
+            </p>
+          </div>
+
+          <div class="editorial-card p-6 reveal stagger-3">
+            <span class="text-[11px] font-mono text-[#76777d] block mb-1">APR 2016 – OCT 2019</span>
+            <h3 class="text-base font-bold text-[#111827]">Vocational College Chiang Rai</h3>
+            <p class="text-xs font-medium text-emerald-700 mb-2">Faculty of Fine Arts and Design — Design Program (GPA 3.20)</p>
+            <p class="text-xs text-[#45464c] leading-relaxed">
+              ศึกษาพื้นฐานการออกแบบศิลปะประยุกต์ การสื่อสารด้วยภาพ (Visual Communication), Graphic Design, Composition, Typography และทักษะการแก้ปัญหาเชิงสร้างสรรค์
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Certificates Gallery -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="editorial-card p-6 reveal stagger-2">
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-[#76777d] mb-4">Certifications & Credentials</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="aspect-[4/3] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (4).jpg" alt="Certificate 1" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-[4/3] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (2).jpg" alt="Certificate 2" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-[4/3] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (3).jpg" alt="Certificate 3" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-[4/3] rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (5).jpg" alt="Certificate 4" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-2 mt-3">
+              <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (6).jpg" alt="Certificate 5" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (7).jpg" alt="Certificate 6" class="w-full h-full object-cover">
+              </div>
+              <div class="aspect-square rounded-lg overflow-hidden border border-[#e5e7eb] bg-gray-50">
+                <img src="assets/Abount me cer (8).jpg" alt="Certificate 7" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION (MATCHING PROJECTS.HTML CTA BOX) -->
+    <section class="mt-20 border border-[#e5e7eb] bg-white rounded-xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 shadow-xs reveal-scale">
+      <div class="space-y-2">
+        <span class="text-xs font-semibold uppercase tracking-wider text-[#76777d]">ร่วมงานกับเรา</span>
+        <h3 class="text-2xl sm:text-3xl font-serif-display text-[#111827]">
+          มีโปรเจกต์ที่อยากพัฒนาร่วมกันไหม?
+        </h3>
+        <p class="text-xs sm:text-sm text-[#45464c] max-w-xl leading-relaxed">
+          พร้อมให้คำปรึกษาด้านการวิจัย การออกแบบประสบการณ์ผู้ใช้ และการพัฒนาสถาปัตยกรรมระบบดิจิทัลสำหรับองค์กรชั้นนำ
+        </p>
+      </div>
+
+      <div class="shrink-0">
+        <a href="contact.html" class="inline-flex items-center gap-2.5 bg-[#111827] text-white text-xs font-semibold px-6 py-3.5 rounded-md hover:bg-[#1f2937] transition-all shadow-md">
+          <span>เริ่มต้นพูดคุยงาน</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Sub Footer Bottom Row with Lucide Icons -->
+    <div class="mt-14 pt-6 border-t border-[#e5e7eb] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#76777d] reveal">
+      <p>© 2026 Kantaphon (RailGun). สงวนลิขสิทธิ์ทั้งหมด.</p>
+      <div class="flex items-center gap-6 uppercase font-mono tracking-wider">
+        <a href="https://www.linkedin.com/in/kantaphon-chainainai-93236336a/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="linkedin" class="w-3 h-3"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="github" class="w-3 h-3"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="about.html" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="user" class="w-3 h-3"></i>
+          <span>About Me</span>
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="mail" class="w-3 h-3"></i>
+          <span>contact</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide Icons
+    function initIcons() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Toggle Mobile Navigation Drawer
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-menu-drawer');
+      if (drawer) {
+        drawer.classList.toggle('hidden');
+        initIcons();
+      }
+    }
+
+    // Luxury Scroll Animation Engine
+    document.addEventListener('DOMContentLoaded', () => {
+      initIcons();
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // Parallax Watermark & Navbar Elevation on Scroll
+      const watermark = document.querySelector('.watermark-hero');
+      const header = document.querySelector('header');
+      const progressBar = document.getElementById('scroll-progress');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Progress bar with luxury width
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0 && progressBar) {
+          progressBar.style.width = (scrollY / docHeight * 100) + '%';
+        }
+
+        // Header subtle shadow elevation
+        if (header) {
+          header.classList.toggle('scrolled', scrollY > 20);
+        }
+
+        // Watermark subtle parallax
+        if (watermark) {
+          watermark.style.transform = `translate3d(0, ${Math.min(scrollY * 0.1, 75)}px, 0)`;
+        }
+      }, { passive: true });
+    });
+  </script>
+</body>
+</html>

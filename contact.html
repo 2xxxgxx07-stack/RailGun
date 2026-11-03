@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact • RailGun (Kantaphon) | UX/UI Designer</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts: Modern Plus Jakarta Sans + Anuphan (Modern Loopless Thai) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-display: 'Plus Jakarta Sans', 'Anuphan', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', 'Anuphan', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #f9f9fa;
+      color: #1a1c1d;
+      overflow-x: hidden;
+      letter-spacing: -0.015em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-serif-display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    /* Scroll progress bar - Luxury Emerald Glow */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981 0%, #111827 50%, #10b981 100%);
+      background-size: 200% 100%;
+      width: 0%;
+      z-index: 100;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+      transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Watermark text styling with smooth parallax */
+    .watermark-hero {
+      font-family: var(--font-body);
+      color: rgba(0, 0, 0, 0.032);
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* Green pulse indicator */
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.4; }
+    }
+    .status-dot {
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    /* Header Scrolled Elevation */
+    header.scrolled {
+      box-shadow: 0 10px 30px -10px rgba(17, 24, 39, 0.08);
+      background-color: rgba(249, 249, 250, 0.95);
+    }
+
+    /* Precision Card Elevation */
+    .editorial-card {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 3px rgba(17, 24, 39, 0.04), 0 6px 16px -4px rgba(17, 24, 39, 0.03);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .editorial-card:hover {
+      transform: translateY(-5px);
+      border-color: #d1d5db;
+      box-shadow: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 20px 32px -8px rgba(17, 24, 39, 0.08);
+    }
+
+    /* Luxury Scroll Reveal System */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.96) translateY(24px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Stagger Delays for Grid Children */
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+
+    /* Modern Form Inputs */
+    .form-input {
+      width: 100%;
+      background-color: #fcfcfd;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #111827;
+      transition: all 0.2s ease;
+    }
+    .form-input:focus {
+      outline: none;
+      background-color: #ffffff;
+      border-color: #111827;
+      box-shadow: 0 0 0 1px #111827;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white relative bg-[#f9f9fa]">
+
+  <!-- Top Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ================= TOP HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo / Identity -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+        <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+        <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+      </a>
+
+      <!-- Center Minimal Capsule Navigation -->
+      <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+        <a href="index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          home
+        </a>
+        <a href="projects.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          Project
+        </a>
+        <a href="about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          About Me
+        </a>
+        <a href="contact.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+          contact
+        </a>
+      </nav>
+
+      <!-- Right Action & Mobile Toggle -->
+      <div class="flex items-center gap-2.5">
+        <a href="contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+          <span>contact</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer / Dropdown -->
+    <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+      <a href="projects.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">Project</a>
+      <a href="about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">contact</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-28">
+
+    <!-- HERO HEADER SECTION -->
+    <section class="relative mb-16">
+      <!-- Watermark Background -->
+      <div class="absolute -top-10 left-0 right-0 overflow-hidden pointer-events-none select-none z-0">
+        <span class="text-[14vw] font-bold watermark-hero uppercase leading-none block tracking-tighter whitespace-nowrap">
+          CONNECT // GET IN TOUCH
+        </span>
+      </div>
+
+      <div class="relative z-10 space-y-4 pt-4 sm:pt-6 reveal">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Open for Opportunities & Collaborations</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif-display text-[#111827] tracking-tight">
+          มาสร้างสรรค์ผลงานร่วมกัน
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#45464c] max-w-2xl leading-relaxed">
+          หากคุณมีโปรเจกต์ที่น่าสนใจ ต้องการปรึกษาการออกแบบระบบ Healthcare / Enterprise UX หรือสนใจร่วมงานในตำแหน่ง UX/UI Designer สามารถส่งข้อความหาผมได้โดยตรงครับ
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN CONTACT GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Left Column: Contact Form (7 Cols) -->
+      <div class="lg:col-span-7 reveal-scale stagger-1">
+        <div class="editorial-card p-6 sm:p-8">
+          <div class="flex items-center justify-between pb-4 mb-6 border-b border-gray-100">
+            <div>
+              <h3 class="text-lg font-bold text-[#111827]">ส่งข้อความถึงผมโดยตรง</h3>
+              <p class="text-xs text-[#76777d]">ผมจะตอบกลับข้อความของคุณอย่างเร็วที่สุดครับ</p>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </div>
+          </div>
+
+          <!-- FormSubmit Action -->
+          <form action="https://formsubmit.co/kantaphonchapchainai@gmail.com" method="POST" class="space-y-4">
+            <!-- Form Config -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New contact from your Portfolio!">
+            <input type="hidden" name="_next" value="https://kantaphonchapchainai.github.io/thanks.html">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="block text-xs font-semibold text-[#111827]">ชื่อของคุณ <span class="text-emerald-600">*</span></label>
+                <input type="text" name="name" placeholder="ชื่อ-นามสกุล หรือชื่อองค์กร" class="form-input" required>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="block text-xs font-semibold text-[#111827]">อีเมลติดต่อ <span class="text-emerald-600">*</span></label>
+                <input type="email" name="email" placeholder="example@company.com" class="form-input" required>
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="block text-xs font-semibold text-[#111827]">หัวข้อข้อความ <span class="text-emerald-600">*</span></label>
+              <input type="text" name="subject" placeholder="เช่น สนใจปรึกษาโปรเจกต์ EMR / นัดคุยงาน" class="form-input" required>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="block text-xs font-semibold text-[#111827]">ข้อความรายละเอียด <span class="text-emerald-600">*</span></label>
+              <textarea name="message" rows="5" placeholder="บอกเราเกี่ยวกับความต้องการของคุณหรือโปรเจกต์ที่ต้องการพัฒนา..." class="form-input resize-y" required></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-[#111827] text-white text-xs font-semibold px-6 py-3.5 rounded-md hover:bg-black transition-all shadow-md">
+                <span>ส่งข้อความ</span>
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Direct Info & Social Channels (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Direct Info Card -->
+        <div class="editorial-card p-6 sm:p-8 space-y-5 reveal stagger-2">
+          <div class="flex items-center gap-2 pb-3 border-b border-gray-100">
+            <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-[#111827]">ช่องทางติดต่อโดยตรง</h3>
+          </div>
+
+          <!-- Email -->
+          <a href="mailto:kantaphonchapchainai@gmail.com" class="flex items-start gap-3.5 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+            <div class="w-10 h-10 rounded-lg bg-[#f3f4f6] group-hover:bg-[#111827] group-hover:text-white flex items-center justify-center text-[#111827] transition-colors shrink-0">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase text-[#76777d] block">Email</span>
+              <strong class="text-xs text-[#111827] font-semibold block group-hover:text-black">kantaphonchapchainai@gmail.com</strong>
+              <span class="text-[11px] text-[#76777d]">คลิกเพื่อส่งอีเมลหาผมทันที</span>
+            </div>
+          </a>
+
+          <!-- Phone -->
+          <a href="tel:0903283039" class="flex items-start gap-3.5 p-3 rounded-lg hover:bg-gray-50 transition-colors group">
+            <div class="w-10 h-10 rounded-lg bg-[#f3f4f6] group-hover:bg-[#111827] group-hover:text-white flex items-center justify-center text-[#111827] transition-colors shrink-0">
+              <i data-lucide="phone" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase text-[#76777d] block">Phone</span>
+              <strong class="text-xs text-[#111827] font-semibold block group-hover:text-black">090-328-3039</strong>
+              <span class="text-[11px] text-[#76777d]">จันทร์ - ศุกร์ (09:00 - 18:00)</span>
+            </div>
+          </a>
+
+          <!-- Location -->
+          <div class="flex items-start gap-3.5 p-3 rounded-lg">
+            <div class="w-10 h-10 rounded-lg bg-[#f3f4f6] flex items-center justify-center text-[#111827] shrink-0">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase text-[#76777d] block">Location</span>
+              <strong class="text-xs text-[#111827] font-semibold block">Bangkok, Thailand</strong>
+              <span class="text-[11px] text-[#76777d]">ยินดีทำงานทั้ง On-site และ Remote ทั่วโลก</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Profiles Card -->
+        <div class="editorial-card p-6 space-y-4 reveal stagger-3">
+          <span class="text-[11px] font-mono uppercase text-[#76777d] block">Social Profiles & Networks</span>
+          
+          <div class="grid grid-cols-2 gap-3">
+            <a href="https://www.linkedin.com/in/kantaphon-chainainai-93236336a/" target="_blank" rel="noopener" class="flex items-center gap-2.5 p-3 rounded-lg border border-[#e5e7eb] hover:border-black hover:bg-gray-50 transition-all text-xs font-semibold text-[#111827]">
+              <i data-lucide="linkedin" class="w-4 h-4 text-[#111827]"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com" target="_blank" rel="noopener" class="flex items-center gap-2.5 p-3 rounded-lg border border-[#e5e7eb] hover:border-black hover:bg-gray-50 transition-all text-xs font-semibold text-[#111827]">
+              <i data-lucide="github" class="w-4 h-4 text-[#111827]"></i>
+              <span>GitHub</span>
+            </a>
+
+            <a href="#" class="flex items-center gap-2.5 p-3 rounded-lg border border-[#e5e7eb] hover:border-black hover:bg-gray-50 transition-all text-xs font-semibold text-[#111827]">
+              <i data-lucide="facebook" class="w-4 h-4 text-[#111827]"></i>
+              <span>Facebook</span>
+            </a>
+
+            <a href="#" class="flex items-center gap-2.5 p-3 rounded-lg border border-[#e5e7eb] hover:border-black hover:bg-gray-50 transition-all text-xs font-semibold text-[#111827]">
+              <i data-lucide="palette" class="w-4 h-4 text-[#111827]"></i>
+              <span>Behance</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Sub Footer Bottom Row with Lucide Icons -->
+    <div class="mt-20 pt-6 border-t border-[#e5e7eb] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#76777d] reveal">
+      <p>© 2026 Kantaphon (RailGun). สงวนลิขสิทธิ์ทั้งหมด.</p>
+      <div class="flex items-center gap-6 uppercase font-mono tracking-wider">
+        <a href="https://www.linkedin.com/in/kantaphon-chainainai-93236336a/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="linkedin" class="w-3 h-3"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="github" class="w-3 h-3"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="about.html" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="user" class="w-3 h-3"></i>
+          <span>About Me</span>
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="mail" class="w-3 h-3"></i>
+          <span>contact</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide Icons
+    function initIcons() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Toggle Mobile Navigation Drawer
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-menu-drawer');
+      if (drawer) {
+        drawer.classList.toggle('hidden');
+        initIcons();
+      }
+    }
+
+    // Luxury Scroll Animation Engine
+    document.addEventListener('DOMContentLoaded', () => {
+      initIcons();
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // Parallax Watermark & Navbar Elevation on Scroll
+      const watermark = document.querySelector('.watermark-hero');
+      const header = document.querySelector('header');
+      const progressBar = document.getElementById('scroll-progress');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Progress bar with luxury width
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0 && progressBar) {
+          progressBar.style.width = (scrollY / docHeight * 100) + '%';
+        }
+
+        // Header elevation
+        if (header) {
+          header.classList.toggle('scrolled', scrollY > 20);
+        }
+
+        // Watermark subtle parallax
+        if (watermark) {
+          watermark.style.transform = `translate3d(0, ${Math.min(scrollY * 0.1, 75)}px, 0)`;
+        }
+      }, { passive: true });
+    });
+  </script>
+</body>
+</html>

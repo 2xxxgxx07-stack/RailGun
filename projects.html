@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ผลงานที่คัดสรร [Selected Works] • RailGun (Kantaphon)</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts: Modern Plus Jakarta Sans + Anuphan (Modern Loopless Thai) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --font-display: 'Plus Jakarta Sans', 'Anuphan', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', 'Anuphan', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #f9f9fa;
+      color: #1a1c1d;
+      overflow-x: hidden;
+      letter-spacing: -0.015em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-serif-display {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+
+    /* Scroll progress bar - Luxury Emerald Glow */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981 0%, #111827 50%, #10b981 100%);
+      background-size: 200% 100%;
+      width: 0%;
+      z-index: 100;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+      transition: width 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Watermark text styling with smooth parallax */
+    .watermark-hero {
+      font-family: var(--font-body);
+      color: rgba(0, 0, 0, 0.032);
+      user-select: none;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* Green pulse indicator */
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.4; }
+    }
+    .status-dot {
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    /* Header Scrolled Elevation */
+    header.scrolled {
+      box-shadow: 0 10px 30px -10px rgba(17, 24, 39, 0.08);
+      background-color: rgba(249, 249, 250, 0.95);
+    }
+
+    /* Precision Card Elevation */
+    .editorial-card {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem; /* 8px as per md spec */
+      box-shadow: 0 1px 3px rgba(17, 24, 39, 0.04), 0 6px 16px -4px rgba(17, 24, 39, 0.03);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    }
+    .editorial-card:hover {
+      transform: translateY(-5px);
+      border-color: #d1d5db;
+      box-shadow: 0 4px 6px -1px rgba(17, 24, 39, 0.05), 0 20px 32px -8px rgba(17, 24, 39, 0.08);
+    }
+
+    /* Luxury Scroll Reveal System */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.96) translateY(24px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-scale.revealed {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Stagger Delays for Grid Children */
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.16s; }
+    .stagger-3 { transition-delay: 0.24s; }
+    .stagger-4 { transition-delay: 0.32s; }
+    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-6 { transition-delay: 0.48s; }
+
+    /* Tabular list transition */
+    .service-row {
+      transition: background-color 0.2s ease, padding 0.2s ease, border-color 0.2s ease;
+    }
+    .service-row:hover {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-black selection:text-white relative bg-[#f9f9fa]">
+
+  <!-- Top Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ================= TOP HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo / Identity -->
+      <a href="index.html" class="flex items-center gap-2 group">
+        <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+        <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+        <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+      </a>
+
+      <!-- Center Minimal Capsule Navigation -->
+      <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+        <a href="index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          home
+        </a>
+        <a href="projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+          Project
+        </a>
+        <a href="about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          About Me
+        </a>
+        <a href="contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+          contact
+        </a>
+      </nav>
+
+      <!-- Right Action & Mobile Toggle -->
+      <div class="flex items-center gap-2.5">
+        <a href="contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+          <span>contact</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Drawer / Dropdown -->
+    <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+      <a href="projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+      <a href="about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+      <a href="contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-28">
+
+    <!-- HERO HEADER SECTION (Matching Editorial Minimalist Image) -->
+    <section class="relative mb-12">
+      <!-- Giant Background Watermark -->
+      <div class="absolute -top-10 left-0 right-0 overflow-hidden pointer-events-none select-none z-0">
+        <span class="text-[14vw] font-bold watermark-hero uppercase leading-none block tracking-tighter whitespace-nowrap">
+          ARCHIVE // WORKS
+        </span>
+      </div>
+
+      <div class="relative z-10 pt-4 max-w-4xl">
+        <!-- Headline Display (Newsreader Editorial Serif + Thai Bold) -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-normal font-serif-display text-[#111827] tracking-tight mb-4 leading-tight">
+          ผลงานที่คัดสรร <span class="font-sans font-medium text-2xl sm:text-3xl text-[#45464c]">[9]</span>
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="text-sm sm:text-base text-[#45464c] leading-relaxed max-w-3xl">
+          รวบรวมผลงานออกแบบระบบนิเวศ EMR ทางการแพทย์, ระบบ AI ช่วยเหลือแพทย์และจัดลำดับเหตุฉุกเฉิน, ระบบคิวและนัดหมาย, สถาปัตยกรรมการเบิกจ่ายสิทธิการรักษา และแอปพลิเคชันดิจิทัลระดับองค์กรที่ตอบโจทย์ผู้ใช้งานจริงอย่างคุ้มค่า
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CONTROLS & FILTER SYSTEM ================= -->
+    <section class="mb-10 space-y-4">
+      
+      <!-- Top Level Category Pills -->
+      <div class="flex flex-wrap items-center gap-2">
+        <button onclick="setCategory('all', this)" class="category-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold bg-[#111827] text-white shadow-sm transition-all">
+          <span>ทุกหมวดหมู่</span>
+          <span class="text-[11px] opacity-70">[9]</span>
+        </button>
+        <button onclick="setCategory('hospital', this)" class="category-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:border-[#111827] hover:text-black transition-all">
+          <span>ระบบโรงพยาบาล & EMR</span>
+          <span class="text-[11px] text-[#76777d]">[4]</span>
+        </button>
+        <button onclick="setCategory('ai', this)" class="category-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:border-[#111827] hover:text-black transition-all">
+          <span>AI & จัดการเหตุฉุกเฉิน</span>
+          <span class="text-[11px] text-[#76777d]">[2]</span>
+        </button>
+        <button onclick="setCategory('clinic', this)" class="category-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:border-[#111827] hover:text-black transition-all">
+          <span>คลินิก & สิทธิการรักษา</span>
+          <span class="text-[11px] text-[#76777d]">[3]</span>
+        </button>
+      </div>
+
+      <!-- Secondary Filter Row: Sub-tags + Realtime Search + View Switcher -->
+      <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 pt-2 border-t border-[#e5e7eb]">
+        
+        <!-- Sub-tag Quick Chips -->
+        <div class="flex flex-wrap items-center gap-1.5">
+          <button onclick="setSubTag('all', this)" class="subtag-chip px-2.5 py-1 rounded text-[11px] font-medium bg-[#111827] text-white transition-all">ทั้งหมด</button>
+          <button onclick="setSubTag('ipd', this)" class="subtag-chip px-2.5 py-1 rounded text-[11px] font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:text-black hover:border-gray-400 transition-all">ระบบในวอร์ด (IPD)</button>
+          <button onclick="setSubTag('emr', this)" class="subtag-chip px-2.5 py-1 rounded text-[11px] font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:text-black hover:border-gray-400 transition-all">ระบบแพทย์ & EMR</button>
+          <button onclick="setSubTag('ai-emerg', this)" class="subtag-chip px-2.5 py-1 rounded text-[11px] font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:text-black hover:border-gray-400 transition-all">ระบบ AI ฉุกเฉิน</button>
+          <button onclick="setSubTag('queue', this)" class="subtag-chip px-2.5 py-1 rounded text-[11px] font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:text-black hover:border-gray-400 transition-all">การจัดการคิว OPD</button>
+          <button onclick="setSubTag('claims', this)" class="subtag-chip px-2.5 py-1 rounded text-[11px] font-medium bg-white border border-[#e5e7eb] text-[#45464c] hover:text-black hover:border-gray-400 transition-all">การเบิกจ่าย & เคลม</button>
+        </div>
+
+        <!-- Search Input & Grid/List View Switcher with Lucide Icons -->
+        <div class="flex items-center gap-2 w-full lg:w-auto">
+          <div class="relative flex-1 lg:w-72">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[#76777d]">
+              <i data-lucide="search" class="w-3.5 h-3.5"></i>
+            </span>
+            <input 
+              id="search-input" 
+              type="text" 
+              placeholder="ค้นหาตามชื่อโปรเจกต์ หรือเทคโนโลยี..." 
+              oninput="handleSearch()"
+              class="w-full pl-8 pr-3 py-1.5 text-xs bg-white border border-[#e5e7eb] rounded-md focus:outline-none focus:border-[#111827] focus:ring-1 focus:ring-[#111827] text-[#111827] placeholder-[#76777d]"
+            >
+          </div>
+
+          <div class="flex items-center border border-[#e5e7eb] rounded-md bg-white p-0.5 shrink-0">
+            <button id="view-grid-btn" onclick="setViewMode('grid')" class="p-1.5 rounded text-xs text-black bg-gray-100 flex items-center justify-center" title="Grid View">
+              <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+            </button>
+            <button id="view-list-btn" onclick="setViewMode('list')" class="p-1.5 rounded text-xs text-gray-400 hover:text-black flex items-center justify-center" title="List View">
+              <i data-lucide="list" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= 3-COLUMN PROJECT SHOWCASE GRID ================= -->
+    <section id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+      <!-- Card 1: WardSync -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="hospital"
+        data-subtag="ipd emr"
+        data-title="WardSync Inpatient Ward Management System"
+        data-desc="ระบบบริหารจัดการหอผู้ป่วยใน เชื่อมต่อการทำงานของทีมแพทย์ พยาบาล และเภสัชกร รวมข้อมูลผู้ป่วย แผนการรักษา และคำสั่งแพทย์ไว้ในที่เดียว"
+        onclick="openProjectModal('WardSync — Inpatient Ward Management System', 'Inpatient Ward Management', 'Multi-Disciplinary Team', 'assets/WardSync.png', 'WardSync is an Inpatient Ward Management System engineered to support multidisciplinary hospital teams (doctors, nurses, and pharmacists). By consolidating patient data, treatment plans, doctor orders, and nursing notes into a unified platform.', 'Porjet%20v2/WardSync.html', 'Lead UX/UI Design • Hospital Workflow', '2025')"
+      >
+        <!-- Media Container (16:10 Aspect Ratio) -->
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/WardSync.png" 
+            alt="WardSync System" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <!-- Top Left Badges -->
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">เสร็จสิ้น</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#10b981]/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">ระบบ IPD หอผู้ป่วย</span>
+          </div>
+          <!-- Top Right Action Arrow (Lucide) -->
+          <a href="Porjet%20v2/WardSync.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Metadata & Content -->
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Inpatient System</span>
+              <span>Hospital Scale</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-[#10b981] transition-colors mb-2 leading-snug">
+              WardSync — Inpatient Ward Management
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              ระบบบริหารจัดการหอผู้ป่วยใน เชื่อมต่อการทำงานของทีมแพทย์ พยาบาล และเภสัชกร รวมข้อมูลผู้ป่วย แผนการรักษา และคำสั่งแพทย์ไว้ในที่เดียว
+            </p>
+          </div>
+
+          <!-- Bottom Micro Footer -->
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: Lead UX/UI Design</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: SafePulse -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="ai hospital"
+        data-subtag="ai-emerg"
+        data-title="SafePulse Real-Time Emergency Incident Platform"
+        data-desc="แพลตฟอร์มบริหารจัดการเหตุฉุกเฉินและอุบัติการณ์ด้วย AI ช่วยวิเคราะห์ระดับความรุนแรง จัดลำดับความสำคัญ และติดตามการสั่งการแบบเรียลไทม์"
+        onclick="openProjectModal('SafePulse — Emergency Incident Management Platform', 'Emergency & Triage', 'AI Incident System', 'assets/SafePulse.png', 'SafePulse is an incident management platform that leverages AI to receive reports, analyze severity, prioritize emergency events, and track hospital operations in real time.', 'Porjet%20v2/SafePulse.html', 'Product Design • AI Workflow', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/SafePulse.png" 
+            alt="SafePulse Platform" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">เสร็จสิ้น</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">AI ประเมินวิกฤต</span>
+          </div>
+          <a href="Porjet%20v2/SafePulse.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Emergency Incident</span>
+              <span>AI Severity Triage</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-rose-600 transition-colors mb-2 leading-snug">
+              SafePulse — Real-Time Emergency Incident
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              แพลตฟอร์มบริหารจัดการเหตุฉุกเฉินและอุบัติการณ์ด้วย AI ช่วยวิเคราะห์ระดับความรุนแรง จัดลำดับความสำคัญ และติดตามการสั่งการแบบเรียลไทม์
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: Product Design & AI Flow</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: DoctorCopilot AI -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="ai hospital"
+        data-subtag="emr ai-emerg"
+        data-title="DoctorCopilot AI Intelligent Clinical Assistant"
+        data-desc="ผู้ช่วยอัจฉริยะสำหรับแพทย์ แปลงบทสนทนาระหว่างแพทย์กับผู้ป่วยเป็นข้อมูลทางคลินิกแบบเรียลไทม์ พร้อมสรุปบันทึกเวชระเบียน SOAP Notes อัตโนมัติ"
+        onclick="openProjectModal('DoctorCopilot AI — Intelligent Clinical Assistant', 'AI Healthcare', 'Clinical Decision Support', 'assets/DoctorCopilot-AI.jpg', 'DoctorCopilot AI is an intelligent clinical assistant for physicians that transcribes doctor-patient audio conversations into clinical data in real time, automatically generating SOAP notes and recommending ICD codes.', 'Porjet%20v2/DoctorCopilot%20AI.html', 'UX/UI Design • Clinical AI', '2026')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/DoctorCopilot-AI.jpg" 
+            alt="DoctorCopilot AI" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">กำลังพัฒนา</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">Clinical Assistant</span>
+          </div>
+          <a href="Porjet%20v2/DoctorCopilot%20AI.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Clinical Assistant</span>
+              <span>Speech to SOAP Notes</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-indigo-600 transition-colors mb-2 leading-snug">
+              DoctorCopilot AI — Clinical Assistant
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              ผู้ช่วยอัจฉริยะสำหรับแพทย์ แปลงบทสนทนาระหว่างแพทย์กับผู้ป่วยเป็นข้อมูลทางคลินิกแบบเรียลไทม์ พร้อมสรุปบันทึกเวชระเบียน SOAP Notes อัตโนมัติ
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: UX/UI Design • Clinical AI</span>
+            <span class="font-mono">2026</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: MediQueue -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="hospital"
+        data-subtag="queue"
+        data-title="MediQueue Smart Outpatient Queue and Booking"
+        data-desc="แพลตฟอร์มจัดการคิวและนัดหมายอัจฉริยะ เชื่อมต่อผู้ป่วย แพทย์ และเจ้าหน้าที่เพื่อลดระยะเวลาการรอคอยในโรงพยาบาล พร้อมแจ้งเตือนคิวแบบเรียลไทม์"
+        onclick="openProjectModal('MediQueue — Smart Outpatient Queue & Booking', 'Queue & Logistics', 'Hospital Smart App', 'assets/MediQueue.png', 'A smart queue and scheduling platform connecting patients, doctors, and clinic staff to eliminate long hospital waiting times and streamline daily appointments.', 'Porjet%20v2/MediQueue.html', 'UX Research • Mobile & Web UI', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/MediQueue.png" 
+            alt="MediQueue Platform" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">เสร็จสิ้น</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">ระบบคิว OPD</span>
+          </div>
+          <a href="Porjet%20v2/MediQueue.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Queue & Scheduling</span>
+              <span>Patient Experience</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-blue-600 transition-colors mb-2 leading-snug">
+              MediQueue — Outpatient Queue & Booking
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              แพลตฟอร์มจัดการคิวและนัดหมายอัจฉริยะ เชื่อมต่อผู้ป่วย แพทย์ และเจ้าหน้าที่เพื่อลดระยะเวลาการรอคอยในโรงพยาบาล พร้อมแจ้งเตือนคิวแบบเรียลไทม์
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: UX Research & Mobile UI</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5: ClaimGuard -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="clinic"
+        data-subtag="claims"
+        data-title="ClaimGuard Healthcare Claims & Billing Platform"
+        data-desc="ระบบตรวจสอบและบริหารจัดการการเคลมสิทธิการรักษาพยาบาล ติดตามสถานะการเบิกจ่าย ตรวจสอบข้อผิดพลาดในเอกสาร และควบคุมรายรับของโรงพยาบาล"
+        onclick="openProjectModal('ClaimGuard — Healthcare Claims & Billing Platform', 'Fintech & Health', 'Enterprise Billing', 'assets/ClaimGuard.jpg', 'A healthcare claims management platform designed to monitor billing workflows, track claim statuses, verify eligibility, audit documentation errors, and manage outstanding revenue.', 'Porjet%20v2/Claim.html', 'System Architecture • UX/UI', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/ClaimGuard.jpg" 
+            alt="ClaimGuard Platform" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">เสร็จสิ้น</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">ตรวจสอบสิทธิ & เคลม</span>
+          </div>
+          <a href="Porjet%20v2/Claim.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Claims Audit</span>
+              <span>Revenue Cycle Ops</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-amber-600 transition-colors mb-2 leading-snug">
+              ClaimGuard — Claims & Billing Audit
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              ระบบตรวจสอบและบริหารจัดการการเคลมสิทธิการรักษาพยาบาล ติดตามสถานะการเบิกจ่าย ตรวจสอบข้อผิดพลาดในเอกสาร และควบคุมรายรับของโรงพยาบาล
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: System Flow & Dashboard UX</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6: Clinic Smart -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="clinic"
+        data-subtag="emr"
+        data-title="Clinic Smart Modular EHR for Specialized Clinics"
+        data-desc="แพลตฟอร์มบริหารจัดการคลินิกเฉพาะทาง (จักษุ ทันตกรรม ฯลฯ) จัดโครงสร้าง Flow การซักประวัติและเวชระเบียนให้ตรงกับความต้องการของแต่ละสาขาการแพทย์"
+        onclick="openProjectModal('Clinic Smart — Tailored Specialized Medical Platform', 'Clinic Platform', 'EHR & Practice', 'assets/Clinicsmart.jpg', 'A tailored management platform designed for specialized medical clinics (e.g., Ophthalmology, Dentistry), structuring workflows and charting around specific clinical requirements.', 'Porjet%20v2/Clinic.html', 'UX/UI Design • Design System', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/Clinicsmart.jpg" 
+            alt="Clinic Smart" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">กำลังพัฒนา</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-teal-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">คลินิกเฉพาะทาง</span>
+          </div>
+          <a href="Porjet%20v2/Clinic.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Specialized Clinic EHR</span>
+              <span>Custom Charting</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-teal-600 transition-colors mb-2 leading-snug">
+              Clinic Smart — Specialized Clinic EHR
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              แพลตฟอร์มบริหารจัดการคลินิกเฉพาะทาง (จักษุ ทันตกรรม ฯลฯ) จัดโครงสร้าง Flow การซักประวัติและเวชระเบียนให้ตรงกับความต้องการของแต่ละสาขาการแพทย์
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: UX/UI Design & System</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7: HerbaMed -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="clinic"
+        data-subtag="emr"
+        data-title="HerbaMed Traditional Chinese Medicine Platform"
+        data-desc="แพลตฟอร์มบริหารจัดการคลินิกแพทย์แผนจีน รองรับการนัดหมาย บันทึกประวัติการฝังเข็ม การจ่ายยาสมุนไพร และติดตามอาการเฉพาะทาง"
+        onclick="openProjectModal('HerbaMed — Traditional Chinese Medicine Platform', 'TCM Clinic', 'Alternative Medicine EHR', 'assets/HerbaMed.jpg', 'A specialized management platform for Traditional Chinese Medicine (TCM) clinics. It supports appointments, patient registration, acupuncture charts, and herbal prescriptions.', 'Porjet%20v2/Chinese%20Med.html', 'UX/UI Design • Specialized Flow', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/HerbaMed.jpg" 
+            alt="HerbaMed Platform" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">กำลังพัฒนา</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-700/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">แพทย์แผนจีน</span>
+          </div>
+          <a href="Porjet%20v2/Chinese%20Med.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>TCM Clinic Practice</span>
+              <span>Acupuncture & Herbs</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-emerald-700 transition-colors mb-2 leading-snug">
+              HerbaMed — Traditional Chinese Medicine
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              แพลตฟอร์มบริหารจัดการคลินิกแพทย์แผนจีน รองรับการนัดหมาย บันทึกประวัติการฝังเข็ม การจ่ายยาสมุนไพร และติดตามอาการเฉพาะทาง
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: UX/UI Design • Specialized Flow</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8: HospiCore -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="hospital"
+        data-subtag="ipd emr"
+        data-title="HospiCore Comprehensive Enterprise HIS Platform"
+        data-desc="แพลตฟอร์มระดับองค์กรสำหรับบริหารจัดการโรงพยาบาลทั้งระบบ ครอบคลุม OPD, IPD, เภสัชกรรม, ห้องปฏิบัติการ (Lab), การเงิน และแดชบอร์ดผู้บริหาร"
+        onclick="openProjectModal('HospiCore — Enterprise HIS Hospital Platform', 'Hospital System', 'Enterprise HIS Platform', 'assets/HospiCore.jpg', 'A comprehensive, multi-module enterprise platform designed to support core hospital operations, including Patient Registration, OPD, IPD, Nursing, Pharmacy, Laboratory, Referrals, Billing, and Executive Dashboards.', 'Porjet%20v2/HIS.html', 'Enterprise UX • Multi-Module', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/HospiCore.jpg" 
+            alt="HospiCore Platform" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">กำลังพัฒนา</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-violet-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">ระบบโรงพยาบาลรวม HIS</span>
+          </div>
+          <a href="Porjet%20v2/HIS.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Enterprise HIS</span>
+              <span>Hospital Core System</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-violet-600 transition-colors mb-2 leading-snug">
+              HospiCore — Enterprise HIS Platform
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              แพลตฟอร์มระดับองค์กรสำหรับบริหารจัดการโรงพยาบาลทั้งระบบ ครอบคลุม OPD, IPD, เภสัชกรรม, ห้องปฏิบัติการ (Lab), การเงิน และแดชบอร์ดผู้บริหาร
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: Enterprise Architecture & UI</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 9: SafeWave -->
+      <article 
+        class="project-card editorial-card flex flex-col group cursor-pointer overflow-hidden reveal"
+        data-category="ai"
+        data-subtag="ai-emerg"
+        data-title="SafeWave Real-Time Disaster Warning Platform"
+        data-desc="ระบบแจ้งเตือนภัยพิบัติและสถานการณ์ฉุกเฉินล่วงหน้าแบบเรียลไทม์ ประมวลผลข้อมูลหลายแหล่งด้วย AI พร้อมส่งการแจ้งเตือนตามพิกัดภูมิศาสตร์"
+        onclick="openProjectModal('SafeWave — Real-Time Disaster Warning Platform', 'Disaster & Alerts', 'Emergency Geo-Warning', 'assets/SafeWave.png', 'SafeWave is a real-time disaster monitoring and early warning platform. It aggregates multi-source data, assesses threats via AI, and delivers geo-targeted emergency alerts to help citizens and authorities prepare and respond effectively.', 'Porjet%20v2/SafeWave.html', 'Product Design • Geo-Mapping UI', '2025')"
+      >
+        <div class="relative w-full aspect-[16/10] bg-[#141b2b] overflow-hidden border-b border-[#f0f2f5]">
+          <img 
+            src="assets/SafeWave.png" 
+            alt="SafeWave Platform" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            onerror="this.src='assets/SafePulse.png'"
+          >
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#111827] text-white tracking-wider uppercase shadow-sm">กำลังพัฒนา</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-sky-600/90 backdrop-blur-sm text-white tracking-wider uppercase shadow-sm">เตือนภัยพิบัติ AI</span>
+          </div>
+          <a href="Porjet%20v2/SafeWave.html" onclick="event.stopPropagation();" class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 text-black flex items-center justify-center text-xs shadow-md group-hover:bg-black group-hover:text-white transition-colors z-10">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-[11px] font-medium text-[#76777d] uppercase tracking-wider mb-1.5">
+              <span>Disaster Early Warning</span>
+              <span>Geo-Targeted Alerts</span>
+            </div>
+            <h3 class="text-base font-semibold text-[#111827] tracking-tight group-hover:text-sky-600 transition-colors mb-2 leading-snug">
+              SafeWave — Disaster Warning Platform
+            </h3>
+            <p class="text-xs text-[#45464c] line-clamp-2 leading-relaxed mb-4">
+              ระบบแจ้งเตือนภัยพิบัติและสถานการณ์ฉุกเฉินล่วงหน้าแบบเรียลไทม์ ประมวลผลข้อมูลหลายแหล่งด้วย AI พร้อมส่งการแจ้งเตือนตามพิกัดภูมิศาสตร์
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-[#f0f2f5] flex items-center justify-between text-[11px] text-[#76777d]">
+            <span>บทบาท: Product Design & Geo-Mapping UI</span>
+            <span class="font-mono">2025</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Empty State for Search / Filter -->
+    <div id="no-results" class="hidden text-center py-16 bg-white border border-[#e5e7eb] rounded-lg p-8 my-8">
+      <p class="text-gray-400 text-sm mb-2">ไม่พบโครงการที่ตรงกับเงื่อนไขการค้นหา</p>
+      <button onclick="resetFilters()" class="text-xs font-semibold text-black underline">ล้างตัวกรองทั้งหมด</button>
+    </div>
+
+    <!-- Center Expand Indicator with Lucide check -->
+    <div class="text-center mb-24">
+      <button class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white border border-[#e5e7eb] text-xs font-medium text-[#45464c] hover:border-[#111827] hover:text-black transition-all shadow-sm">
+        <span>แสดงโครงการที่คัดสรรครบทั้ง 9 โครงการ</span>
+        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i>
+      </button>
+      <p class="text-[11px] text-[#76777d] mt-2">ผลงานทั้งหมดสร้างขึ้นจากความต้องการจริง และส่งต่อการพัฒนาได้อย่างสมบูรณ์</p>
+    </div>
+
+    <!-- ================= SERVICES SECTION (Matching Editorial Minimalist Image) ================= -->
+    <section class="relative pt-12 pb-16 border-t border-[#e5e7eb]">
+      <!-- Background Watermark -->
+      <div class="absolute -top-6 left-0 right-0 overflow-hidden pointer-events-none select-none z-0">
+        <span class="text-[12vw] font-bold watermark-hero uppercase leading-none block tracking-tighter whitespace-nowrap">
+          SERVICES
+        </span>
+      </div>
+
+      <div class="relative z-10 mb-8">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#76777d] mb-1">ความเชี่ยวชาญเฉพาะทาง</p>
+        <h2 class="text-2xl sm:text-3xl font-serif-display font-normal text-[#111827] tracking-tight">
+          ด้านที่เชี่ยวชาญเป็นพิเศษ
+        </h2>
+      </div>
+
+      <!-- Tabular List Items with Lucide Icons -->
+      <div class="space-y-3 relative z-10">
+        
+        <!-- Service Item 1 -->
+        <a href="about.html" class="service-row block bg-white/70 border border-[#e5e7eb] rounded-lg p-5 sm:p-6 transition-all group">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-5">
+              <span class="text-[11px] font-mono text-[#76777d] uppercase block mb-1">01 / สถาปัตยกรรมระบบการแพทย์</span>
+              <h3 class="text-lg font-semibold text-[#111827] group-hover:text-black transition-colors">
+                ระบบ EMR และคลินิกทางการแพทย์
+              </h3>
+            </div>
+            <div class="md:col-span-6">
+              <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed">
+                ออกแบบระบบจัดการข้อมูลผู้ป่วยตามมาตรฐานสากล เพิ่มความถูกต้องแม่นยำ ปลอดภัยต่อข้อมูลสุขภาพ และลดภาระงานของบุคลากร
+              </p>
+            </div>
+            <div class="md:col-span-1 text-right hidden md:block">
+              <span class="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-black group-hover:text-white inline-flex items-center justify-center text-xs transition-colors">
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Service Item 2 -->
+        <a href="about.html" class="service-row block bg-white/70 border border-[#e5e7eb] rounded-lg p-5 sm:p-6 transition-all group">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-5">
+              <span class="text-[11px] font-mono text-[#76777d] uppercase block mb-1">02 / เวิร์กโฟลว์ผู้ป่วย & การจัดคิว</span>
+              <h3 class="text-lg font-semibold text-[#111827] group-hover:text-black transition-colors">
+                เวิร์กโฟลว์ในหอผู้ป่วย (IPD) และศูนย์กระจายคิว
+              </h3>
+            </div>
+            <div class="md:col-span-6">
+              <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed">
+                วิเคราะห์ Workflow แพทย์ พยาบาล เภสัชกร เพื่อลดความซ้ำซ้อนของการบันทึกข้อมูล และเพิ่มประสิทธิภาพการรักษาผู้ป่วยได้ทันเวลา
+              </p>
+            </div>
+            <div class="md:col-span-1 text-right hidden md:block">
+              <span class="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-black group-hover:text-white inline-flex items-center justify-center text-xs transition-colors">
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Service Item 3 -->
+        <a href="about.html" class="service-row block bg-white/70 border border-[#e5e7eb] rounded-lg p-5 sm:p-6 transition-all group">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-5">
+              <span class="text-[11px] font-mono text-[#76777d] uppercase block mb-1">03 / ปัญญาประดิษฐ์ทางการแพทย์</span>
+              <h3 class="text-lg font-semibold text-[#111827] group-hover:text-black transition-colors">
+                ระบบ AI ช่วยแพทย์และวิเคราะห์อุบัติการณ์
+              </h3>
+            </div>
+            <div class="md:col-span-6">
+              <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed">
+                การแปลงเสียงสนทนาเป็นบันทึก SOAP Notes อัตโนมัติ และการจัดลำดับความรุนแรงของวิกฤตฉุกเฉินแบบเรียลไทม์
+              </p>
+            </div>
+            <div class="md:col-span-1 text-right hidden md:block">
+              <span class="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-black group-hover:text-white inline-flex items-center justify-center text-xs transition-colors">
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Service Item 4 -->
+        <a href="about.html" class="service-row block bg-white/70 border border-[#e5e7eb] rounded-lg p-5 sm:p-6 transition-all group">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+            <div class="md:col-span-5">
+              <span class="text-[11px] font-mono text-[#76777d] uppercase block mb-1">04 / โครงสร้างระบบดีไซน์</span>
+              <h3 class="text-lg font-semibold text-[#111827] group-hover:text-black transition-colors">
+                ระบบดีไซน์และสถาปัตยกรรมโทเค็น (Figma & Code)
+              </h3>
+            </div>
+            <div class="md:col-span-6">
+              <p class="text-xs sm:text-sm text-[#45464c] leading-relaxed">
+                สร้าง Design Tokens ใน Figma ที่เชื่อมต่อไปยัง React/Tailwind เพื่อความสม่ำเสมอและส่งต่องานการพัฒนาที่รวดเร็ว
+              </p>
+            </div>
+            <div class="md:col-span-1 text-right hidden md:block">
+              <span class="w-8 h-8 rounded-full bg-gray-100 group-hover:bg-black group-hover:text-white inline-flex items-center justify-center text-xs transition-colors">
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ================= FOOTER CTA SECTION ================= -->
+    <section class="mt-16 pt-16 border-t border-[#e5e7eb] flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#76777d] mb-2">ติดต่อและเริ่มงานร่วมกัน</p>
+        <h2 class="text-3xl sm:text-4xl font-serif-display font-normal text-[#111827] tracking-tight leading-tight mb-3">
+          มีโปรเจกต์ที่อยากพัฒนาร่วมกันไหม?
+        </h2>
+        <p class="text-xs sm:text-sm text-[#45464c] max-w-xl leading-relaxed">
+          พร้อมให้คำปรึกษาด้านการวิจัย การออกแบบประสบการณ์ผู้ใช้ และการพัฒนาสถาปัตยกรรมระบบดิจิทัลสำหรับองค์กรชั้นนำ
+        </p>
+      </div>
+
+      <div class="shrink-0">
+        <a href="contact.html" class="inline-flex items-center gap-2.5 bg-[#111827] text-white text-xs font-semibold px-6 py-3.5 rounded-md hover:bg-[#1f2937] transition-all shadow-md">
+          <span>เริ่มต้นพูดคุยงาน</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Sub Footer Bottom Row with Lucide Icons -->
+    <div class="mt-14 pt-6 border-t border-[#e5e7eb] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#76777d]">
+      <p>© 2026 Kantaphon (RailGun). สงวนลิขสิทธิ์ทั้งหมด.</p>
+      <div class="flex items-center gap-6 uppercase font-mono tracking-wider">
+        <a href="https://www.linkedin.com/in/kantaphon-chainainai-93236336a/" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="linkedin" class="w-3 h-3"></i>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="github" class="w-3 h-3"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="about.html" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="user" class="w-3 h-3"></i>
+          <span>About Me</span>
+        </a>
+        <a href="contact.html" class="inline-flex items-center gap-1.5 hover:text-black transition-colors">
+          <i data-lucide="mail" class="w-3 h-3"></i>
+          <span>contact</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= PROJECT DETAIL MODAL ================= -->
+  <div id="project-modal" class="fixed inset-0 z-50 bg-[#111827]/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white border border-[#e5e7eb] rounded-lg shadow-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto transform scale-95 transition-transform duration-300">
+      
+      <!-- Modal Top Bar -->
+      <div class="sticky top-0 bg-white/95 backdrop-blur border-b border-[#e5e7eb] px-6 py-3.5 flex items-center justify-between z-10">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-[#45464c]" id="modal-subtag">Case Study Showcase</span>
+        </div>
+        <button onclick="closeProjectModal()" class="w-7 h-7 rounded-full bg-gray-100 hover:bg-black hover:text-white flex items-center justify-center text-xs transition-colors">
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6">
+        
+        <!-- Title & Category -->
+        <div>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span id="modal-tag1" class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-[#111827] text-white">Healthcare</span>
+            <span id="modal-tag2" class="px-2.5 py-0.5 rounded text-[11px] font-medium bg-[#f3f3f4] text-[#45464c]">Inpatient System</span>
+          </div>
+          <h2 id="modal-title" class="text-2xl sm:text-3xl font-serif-display font-normal text-[#111827] tracking-tight">
+            WardSync Platform
+          </h2>
+        </div>
+
+        <!-- Image Banner -->
+        <div class="rounded-lg overflow-hidden border border-[#e5e7eb] bg-[#141b2b]">
+          <img id="modal-img" src="" alt="Project Showcase" class="w-full max-h-[460px] object-cover">
+        </div>
+
+        <!-- Description & Meta Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-2">
+          <div class="md:col-span-8 space-y-3">
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-[#76777d]">เกี่ยวกับโปรเจกต์</h4>
+            <p id="modal-desc" class="text-sm text-[#45464c] leading-relaxed">
+              รายละเอียดของโปรเจกต์
+            </p>
+          </div>
+
+          <div class="md:col-span-4 bg-[#f9f9fa] p-4 rounded-lg border border-[#e5e7eb] space-y-3 text-xs">
+            <div>
+              <span class="text-[#76777d] block text-[10px] uppercase font-semibold">บทบาทหน้าที่</span>
+              <span id="modal-role" class="font-medium text-[#111827]">Lead UX/UI Designer</span>
+            </div>
+            <div>
+              <span class="text-[#76777d] block text-[10px] uppercase font-semibold">ปีที่พัฒนา</span>
+              <span id="modal-year" class="font-medium text-[#111827]">2025</span>
+            </div>
+            <div class="pt-2">
+              <a id="modal-link" href="#" class="w-full inline-flex items-center justify-center gap-1.5 bg-[#111827] text-white py-2 rounded text-xs font-medium hover:bg-black transition-colors">
+                <span>อ่าน Case Study ฉบับเต็ม</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Initialize Lucide Icons
+    function initIcons() {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    // Toggle Mobile Navigation Drawer
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-menu-drawer');
+      if (drawer) {
+        drawer.classList.toggle('hidden');
+        initIcons();
+      }
+    }
+
+    // Luxury Scroll Animation & Reveal Engine
+    document.addEventListener('DOMContentLoaded', () => {
+      initIcons();
+
+      // Ensure all editorial cards have reveal classes and staggered delays
+      const cards = document.querySelectorAll('.editorial-card');
+      cards.forEach((card, index) => {
+        if (!card.classList.contains('reveal') && !card.classList.contains('reveal-scale')) {
+          card.classList.add('reveal');
+          // Add stagger class 1-4 based on column position
+          const staggerIndex = (index % 3) + 1;
+          card.classList.add(`stagger-${staggerIndex}`);
+        }
+      });
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal, .reveal-scale').forEach(el => {
+        revealObserver.observe(el);
+      });
+
+      // Parallax Watermark & Navbar Elevation on Scroll
+      const watermark = document.querySelector('.watermark-hero');
+      const header = document.querySelector('header');
+      const progressBar = document.getElementById('scroll-progress');
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Progress bar with luxury width
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight > 0 && progressBar) {
+          progressBar.style.width = (scrollY / docHeight * 100) + '%';
+        }
+
+        // Header elevation
+        if (header) {
+          header.classList.toggle('scrolled', scrollY > 20);
+        }
+
+        // Watermark subtle parallax
+        if (watermark) {
+          watermark.style.transform = `translate3d(0, ${Math.min(scrollY * 0.1, 80)}px, 0)`;
+        }
+      }, { passive: true });
+    });
+
+    // Filtering State
+    let currentCategory = 'all';
+    let currentSubTag = 'all';
+
+    function setCategory(category, btn) {
+      currentCategory = category;
+      document.querySelectorAll('.category-pill').forEach(b => {
+        b.classList.remove('bg-[#111827]', 'text-white', 'shadow-sm');
+        b.classList.add('bg-white', 'border', 'border-[#e5e7eb]', 'text-[#45464c]');
+      });
+      btn.classList.add('bg-[#111827]', 'text-white', 'shadow-sm');
+      btn.classList.remove('bg-white', 'border', 'border-[#e5e7eb]', 'text-[#45464c]');
+      applyFilters();
+    }
+
+    function setSubTag(subtag, btn) {
+      currentSubTag = subtag;
+      document.querySelectorAll('.subtag-chip').forEach(b => {
+        b.classList.remove('bg-[#111827]', 'text-white');
+        b.classList.add('bg-white', 'border', 'border-[#e5e7eb]', 'text-[#45464c]');
+      });
+      btn.classList.add('bg-[#111827]', 'text-white');
+      btn.classList.remove('bg-white', 'border', 'border-[#e5e7eb]', 'text-[#45464c]');
+      applyFilters();
+    }
+
+    function handleSearch() {
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = (document.getElementById('search-input').value || '').trim().toLowerCase();
+      const cards = document.querySelectorAll('.project-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category') || '';
+        const subtag = card.getAttribute('data-subtag') || '';
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const desc = (card.getAttribute('data-desc') || '').toLowerCase();
+
+        const matchCat = (currentCategory === 'all') || cat.includes(currentCategory);
+        const matchSubTag = (currentSubTag === 'all') || subtag.includes(currentSubTag);
+        const matchQuery = !query || title.includes(query) || desc.includes(query);
+
+        if (matchCat && matchSubTag && matchQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const noResults = document.getElementById('no-results');
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+
+      initIcons();
+    }
+
+    function resetFilters() {
+      document.getElementById('search-input').value = '';
+      setCategory('all', document.querySelectorAll('.category-pill')[0]);
+      setSubTag('all', document.querySelectorAll('.subtag-chip')[0]);
+    }
+
+    // View Switcher (Grid vs List)
+    function setViewMode(mode) {
+      const grid = document.getElementById('projects-grid');
+      const gridBtn = document.getElementById('view-grid-btn');
+      const listBtn = document.getElementById('view-list-btn');
+
+      if (mode === 'list') {
+        grid.classList.remove('md:grid-cols-2', 'lg:grid-cols-3');
+        grid.classList.add('grid-cols-1');
+        listBtn.classList.add('text-black', 'bg-gray-100');
+        listBtn.classList.remove('text-gray-400');
+        gridBtn.classList.remove('text-black', 'bg-gray-100');
+        gridBtn.classList.add('text-gray-400');
+
+        document.querySelectorAll('.project-card').forEach(card => {
+          card.classList.add('sm:flex-row');
+          const media = card.querySelector('.aspect-\\[16\\/10\\]');
+          if (media) {
+            media.classList.add('sm:w-72', 'sm:aspect-auto', 'sm:h-auto', 'shrink-0');
+          }
+        });
+      } else {
+        grid.classList.remove('grid-cols-1');
+        grid.classList.add('md:grid-cols-2', 'lg:grid-cols-3');
+        gridBtn.classList.add('text-black', 'bg-gray-100');
+        gridBtn.classList.remove('text-gray-400');
+        listBtn.classList.remove('text-black', 'bg-gray-100');
+        listBtn.classList.add('text-gray-400');
+
+        document.querySelectorAll('.project-card').forEach(card => {
+          card.classList.remove('sm:flex-row');
+          const media = card.querySelector('.aspect-\\[16\\/10\\]');
+          if (media) {
+            media.classList.remove('sm:w-72', 'sm:aspect-auto', 'sm:h-auto', 'shrink-0');
+          }
+        });
+      }
+      initIcons();
+    }
+
+    // Modal Details System
+    const modal = document.getElementById('project-modal');
+    function openProjectModal(title, tag1, tag2, imgSrc, desc, link, role, year) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-tag1').textContent = tag1;
+      document.getElementById('modal-tag2').textContent = tag2;
+      document.getElementById('modal-img').src = imgSrc;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('modal-link').href = link;
+      document.getElementById('modal-role').textContent = role || 'UX/UI Designer';
+      document.getElementById('modal-year').textContent = year || '2025';
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.querySelector('div').classList.remove('scale-95');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+      initIcons();
+    }
+
+    function closeProjectModal() {
+      modal.classList.add('opacity-0');
+      modal.querySelector('div').classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }, 300);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeProjectModal();
+      }
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeProjectModal();
+      }
+    });
+  </script>
+
+</body>
+</html>

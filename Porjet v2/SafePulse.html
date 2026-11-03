@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafePulse Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">SafePulse</span>
+            </h1>
+            <p style="max-width: 800px;">
+                SafePulse is an emergency response and incident management platform designed to standardize
+                reporting, coordinate inter-agency response, and reduce delays in critical situations.
+                The design process focused on how users behave under pressure to create a fast, reliable,
+                and clear interface for emergency professionals.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=66-59822&viewport=-4108%2C-1477%2C0.52&t=6CtPV4usD2TKj9FH-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=66%3A59822"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="https://canva.link/q058djlr5lwvrjw" target="_blank" class="btn"
+                    style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View
+                    Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://i.pinimg.com/736x/e1/a8/93/e1a89322a7948b8de77ca4dab55d2f89.jpg" alt="Emergency"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/1200x/4e/0a/13/4e0a133a482dbd75a9fdc2331aa97ef6.jpg"
+                    alt="Medical Equipment" class="rounded-img">
+                <img src="https://i.pinimg.com/736x/53/f7/f3/53f7f3c96013dc609f9c3ac34cae5b47.jpg" class="rounded-img">
+                <img src="https://i.pinimg.com/1200x/be/0f/d3/be0fd3f227cbdfe58dfe355e9027db6b.jpg" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/736x/4f/85/f7/4f85f740cc5a66fe95c57d2cb8466604.jpg" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/1200x/b7/2f/53/b72f5336b10377d51b0b9aa3efbb5536.jpg" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/SafePulse.png" alt="SafePulse Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    SafePulse is an emergency alert and incident management system designed to help users monitor,
+                    manage, and respond to critical incidents in real time. The system provides centralized information
+                    about incidents, affected areas, alert status, and response activities, enabling teams to quickly
+                    understand the situation and coordinate appropriate actions. The project focuses on improving
+                    situational awareness, reducing information gaps, and supporting faster decision-making during
+                    emergency situations.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The project followed a user-centered design process to understand how users receive, interpret, and
+                    respond to emergency information. I explored user needs, pain points, and behaviors related to
+                    incident monitoring and emergency response. These insights were translated into user personas,
+                    empathy maps, journey maps, and problem statements. I then developed the information architecture,
+                    user flows, and wireframes before creating high-fidelity prototypes. Usability testing and feedback
+                    were used to identify usability issues and refine the final experience.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    SSafePulse is built around the concept of “Real-time Situational Awareness”, providing users with
+                    the information they need to understand an incident and respond quickly. The interface brings
+                    together incident alerts, affected locations, severity levels, and response status in one
+                    centralized experience. Visual indicators and clear information hierarchy help users quickly
+                    identify critical events and prioritize their actions. The solution is designed to reduce
+                    information overload while ensuring that important emergency information remains highly visible and
+                    easy to understand.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research explored how emergency responders, medical personnel, and coordinators operate during
+                    incidents. The findings revealed that responders under pressure rely heavily on familiar patterns
+                    and struggle with systems that require complex navigation or unclear information hierarchies.
+                    Coordinators described the difficulty of tracking multiple concurrent incidents across different
+                    communication channels. User Personas were developed for field responders, incident commanders,
+                    and inter-agency coordinators, each with distinct goals, time pressures, and decision-making
+                    contexts. Empathy Maps captured the emotional states and cognitive demands placed on users
+                    during emergency response.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../SafePulse/User persona (2).jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../SafePulse/Empathy map.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Three primary challenges were identified: fragmented incident reporting across unstandard channels,
+                    delayed inter-agency coordination due to unclear communication protocols, and manual triage
+                    leading to errors in urgency prioritization during concurrent incidents. Problem Statements
+                    were developed for field responders and coordinators, and Design Goals focused on creating
+                    a system that reduces reporting time, standardizes incident data, and gives coordinators
+                    immediate situational awareness. User Journey Maps traced the full incident response lifecycle
+                    from detection to resolution.
+                </p>
+                <div class="mt-16 define-image-grid" style="gap: 16px; margin-top: 32px;">
+                    <img src="../SafePulse/PS1.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../SafePulse/PS2.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../SafePulse/PS3.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../SafePulse/Persona goal.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../SafePulse/User journeymap.png" alt="Journey" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 300px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Ideation focused on how to minimize the steps required to report an incident while capturing
+                    all necessary information. User Flows mapped the incident reporting process for field responders
+                    and the coordination dashboard interaction for incident commanders. The design explored how
+                    to surface the most critical information — incident location, type, severity, and available
+                    resources — without overwhelming coordinators. A Sitemap structured the platform into a
+                    field-facing reporting interface and a coordinator-facing dashboard for real-time monitoring
+                    and resource allocation.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../SafePulse/User flow.png" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../SafePulse/Site map.png" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Wireframes established the structure of the incident reporting form, coordination dashboard,
+                    resource allocation view, and communication panel. High-fidelity designs applied a high-contrast
+                    color system optimized for use in field conditions, with clear priority indicators, alert states,
+                    and status colors designed to communicate urgency at a glance. An interactive prototype
+                    simulated a complete incident response scenario — from initial report submission to coordinator
+                    response and resource deployment.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../SafePulse/Lo-fi.png" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../SafePulse/Hi-fi.png" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted using simulated emergency scenarios with responders and
+                        coordinators. Testing evaluated how quickly users could complete an incident report,
+                        understand the coordination dashboard, and execute resource allocation decisions under
+                        time pressure. Key findings around information density, alert visibility, and form completion
+                        speed were used to refine the interface for high-pressure operational environments.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul
+                        style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Faster Incident
+                            Reporting
+                            — Structured forms reduced the time needed to submit a complete incident report in field
+                            conditions.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Situational
+                            Awareness
+                            — Coordinators reported better visibility into concurrent incidents through the centralized
+                            dashboard.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Clearer Priority
+                            Indicators
+                            — Color-coded urgency levels allowed faster visual prioritization during multi-incident
+                            management.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Reduced Coordination
+                            Delays
+                            — Standardized communication protocols improved inter-agency response time during testing
+                            scenarios.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The SafePulse Design System prioritizes clarity and speed in
+                        high-stress environments. It uses a high-contrast color palette with clear semantic
+                        colors for incident priority levels, alert states, and status indicators, combined with
+                        bold typography and accessible component sizing optimized for field use.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        SafePulse's visual direction is urgent, reliable, and focused. The interface uses a
+                        high-contrast dark theme with strong color signals for priority and alert states,
+                        communicating the seriousness of emergency situations while maintaining clarity under
+                        pressure. Every design decision prioritizes speed of comprehension and action over
+                        visual complexity.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../SafePulse/MT2.png" alt="Mood 1" class="rounded-img">
+                    <img src="https://i.pinimg.com/736x/70/a9/df/70a9df2a5580cd974fa77d3d274d8407.jpg" alt="Mood 2"
+                        class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../assets/SafePulse.png" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

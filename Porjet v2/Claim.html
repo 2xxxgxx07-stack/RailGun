@@ -1,0 +1,394 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClaimGuard Case Study | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: {
+          preflight: false,
+        }
+      }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress"></div>
+
+        <!-- ================= TOP HEADER / NAVBAR ================= -->
+    <header class="site-header sticky top-0 z-40 w-full bg-[#f9f9fa]/90 backdrop-blur-md border-b border-[#e5e7eb] transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            
+            <!-- Logo / Identity -->
+            <a href="../index.html" class="flex items-center gap-2 group">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] status-dot"></span>
+                <span class="font-bold text-sm tracking-tight text-[#111827] group-hover:text-black">RailGun</span>
+                <span class="text-xs text-[#6b7280] font-normal hidden sm:inline-block">/ Kantaphon</span>
+            </a>
+
+            <!-- Center Minimal Capsule Navigation -->
+            <nav class="hidden md:flex items-center gap-1 bg-white border border-[#e5e7eb] px-3 py-1.5 rounded-full shadow-sm text-xs font-medium text-[#45464c]">
+                <a href="../index.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    home
+                </a>
+                <a href="../projects.html" class="px-3.5 py-1 rounded-full bg-[#111827] text-white transition-all flex items-center gap-1.5 font-semibold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+                    Project
+                </a>
+                <a href="../about.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    About Me
+                </a>
+                <a href="../contact.html" class="px-3.5 py-1 rounded-full hover:text-black hover:bg-gray-100 transition-all">
+                    contact
+                </a>
+            </nav>
+
+            <!-- Right Action & Mobile Toggle -->
+            <div class="flex items-center gap-2.5">
+                <a href="../contact.html" class="inline-flex items-center gap-1.5 bg-[#111827] text-white text-xs font-medium px-4 py-2 rounded-md hover:bg-[#1f2937] transition-all shadow-sm">
+                    <span>contact</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-[#111827] hover:bg-gray-100 rounded-md">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Drawer / Dropdown -->
+        <div id="mobile-menu-drawer" class="md:hidden hidden bg-white border-b border-[#e5e7eb] px-4 py-4 space-y-2 shadow-lg">
+            <a href="../index.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">home</a>
+            <a href="../projects.html" class="block px-3 py-2 rounded-md text-sm font-semibold bg-[#111827] text-white">Project</a>
+            <a href="../about.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">About Me</a>
+            <a href="../contact.html" class="block px-3 py-2 rounded-md text-sm font-medium text-[#45464c] hover:bg-gray-50 hover:text-black">contact</a>
+        </div>
+    </header>
+
+    <div class="container back-link fade-in">
+        <a href="javascript:history.back()"><i data-lucide="arrow-left"></i> Back to projects</a>
+    </div>
+
+    <header class="hero slide-up" style="padding-top: 20px;">
+        <div class="container hero-content">
+            <h1 style="font-weight: 500;">Crafting Digital Experiences That<br><span class="highlight"
+                    style="font-size: 1.5em; display: inline-block; margin-top: 10px; font-weight: 600;">ClaimGuard</span>
+            </h1>
+            <p style="max-width: 800px;">
+                ClaimGuard is a healthcare claims management platform designed to monitor billing workflows,
+                track claim statuses, verify eligibility, audit documentation errors, and manage outstanding
+                revenue. It brings clarity and control to the complex world of healthcare billing operations.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px;">
+                <a href="https://www.figma.com/proto/HxnjIRhxzaaMpLninhPC9B/My-Project?node-id=292-68765&viewport=3561%2C14578%2C0.56&t=j8FY51RGV5Nq0A8f-0&scaling=contain&content-scaling=fixed&starting-point-node-id=292%3A68765&show-proto-sidebar=1"
+                    target="_blank" class="btn primary-btn"><i data-lucide="play"></i> Prototype</a>
+                <a href="https://canva.link/6e4o6odw0gdm108" target="_blank" class="btn"
+                    style="border: 1px solid var(--primary); color: var(--primary);"><i data-lucide="file-text"></i> View
+                    Information</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section grid-2-col slide-up">
+            <div class="image-grid-6 full-width-grid">
+                <img src="https://i.pinimg.com/736x/d5/e7/7d/d5e77d7fc54915ea01a1790a7111c9cc.jpg" alt="Finance"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/736x/42/b7/e3/42b7e3e204ad93f3e39e7bd37b0bfb1f.jpg" alt="Medical"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/736x/a5/b5/0d/a5b50d2c4fc13c2481b4b0bcfbbaf8d4.jpg" class="rounded-img">
+                <img src="https://i.pinimg.com/736x/b0/33/d6/b033d68197e156fecbf18c1a5f904acc.jpg" alt="Doctor"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/736x/7f/f0/3e/7ff03eecf7773581c35b2d05af3645b8.jpg" alt="Surgery"
+                    class="rounded-img">
+                <img src="https://i.pinimg.com/736x/fa/65/dc/fa65dc6c2f658be30b403f01da977966.jpg" alt="Lab"
+                    class="rounded-img">
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card persona-card">
+                <img src="../assets/ClaimGuard.jpg" alt="ClaimGuard Research" class="rounded-img persona-img"
+                    style="object-fit: cover;">
+            </div>
+            <div class="card dark-card flex-col justify-center">
+                <h3 class="section-title highlight">Overview</h3>
+                <p>
+                    ClaimGuard is a healthcare revenue cycle management platform designed for billing specialists,
+                    financial managers, and hospital administrators. The system centralizes claim tracking, eligibility
+                    verification, documentation auditing, and revenue analytics into a unified interface. The project
+                    focuses on reducing billing errors that delay reimbursements and providing actionable financial
+                    insights that help revenue cycle teams prioritize and resolve claims more efficiently.
+                </p>
+            </div>
+        </section>
+
+        <section class="section grid-2-col slide-up">
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">UX Process</h3>
+                <p>
+                    The design process began with research into how billing specialists and financial managers
+                    currently track claims, identify errors, and manage outstanding revenue. Research revealed
+                    significant friction caused by fragmented legacy systems, manual line-item reviews, and the
+                    lack of prioritized error queues. These insights were translated into user flows, information
+                    architecture, and interface priorities before being developed into wireframes and high-fidelity
+                    prototypes tested with revenue cycle professionals.
+                </p>
+            </div>
+            <div class="card dark-card flex-col">
+                <h3 class="section-title highlight">Solution & Concept</h3>
+                <p>
+                    ClaimGuard consolidates the revenue cycle workflow into a single platform where billing teams
+                    can track claim status across all stages, receive automated alerts for documentation errors,
+                    verify patient eligibility in real time, and access financial analytics that prioritize
+                    high-value outstanding claims. The core concept focuses on Centralized Claim Tracking,
+                    Automated Error Detection, Priority-Based Workflows, and Actionable Revenue Insights to
+                    improve reimbursement rates and reduce billing cycle time.
+                </p>
+            </div>
+        </section>
+
+        <section class="section design-thinking-section" style="margin-top: 48px;">
+            <h3 class="slide-up" style="font-size: 1.5rem; font-weight: 600;">Design thinking</h3>
+            <hr class="slide-up" style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <!-- Empathize -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="user" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Empathize</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Research explored how billing specialists, financial managers, and hospital administrators
+                    manage the revenue cycle and where the process breaks down. Interviews revealed that billing
+                    teams spend significant time manually tracking claims across legacy systems and identifying
+                    documentation errors without clear prioritization. Financial managers described difficulty
+                    in getting a real-time view of outstanding revenue and the status of denied claims. User
+                    Personas were developed for billing specialists, revenue cycle managers, and hospital CFOs.
+                    Empathy Maps captured the frustration of managing high claim volumes with limited visibility
+                    and the pressure of meeting reimbursement timelines.
+                </p>
+                <div class="grid-2-col mt-16" style="margin-top: 32px; align-items: start; gap: 24px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../ClaimGuard/User persona (3).jpg" alt="Persona" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <img src="../ClaimGuard/Emapathy.jpg" alt="Empathy map" class="rounded-img"
+                            style="width: 100%; height: auto; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Define -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="compass" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Define</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Three primary problem areas were identified: claim data scattered across legacy systems
+                    requiring manual review, billing errors delaying reimbursements without clear prioritization,
+                    and financial reports showing raw data without actionable insights for quick resolution.
+                    Problem Statements and Design Goals were established to guide the solution toward a platform
+                    that surfaces the right claim at the right time, automates error flagging, and presents
+                    financial data in a format that supports fast decision-making. User Journey Maps traced the
+                    claim lifecycle from submission to reimbursement for each billing role.
+                </p>
+                <div class="mt-16 define-image-grid" style="gap: 16px; margin-top: 32px;">
+                    <img src="..//ClaimGuard/PS1.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../ClaimGuard/PS2.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                    <img src="../ClaimGuard/PS3.png" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../ClaimGuard/Design goals.jpg" alt="Define" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 100px;">
+                </div>
+                <div class="mt-16" style="margin-top: 24px;">
+                    <img src="../ClaimGuard/User journeymap.png" alt="Journey" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 300px;">
+                </div>
+            </div>
+
+            <!-- Ideate -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="lightbulb" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Ideate</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Ideation focused on how to organize the revenue cycle workflow in a way that reduces manual
+                    effort and surfaces the most important claims at each stage. User Flows mapped the billing
+                    specialist's claim review workflow, the error resolution process, and the financial manager's
+                    reporting and analytics interaction. A Sitemap structured the platform around the core
+                    revenue cycle stages — submission, verification, tracking, error resolution, and reporting —
+                    ensuring that each team member could access the tools most relevant to their responsibilities
+                    without navigating through unrelated features.
+                </p>
+                <div class="mt-16 grid-2-col" style="margin-top: 32px;">
+                    <img src="../SafePulse/User flow.png" alt="Flow" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                    <img src="../SafePulse/Site map.png" alt="Sitemap" class="rounded-img"
+                        style="width: 100%; background: #2A2A2A; min-height: 400px;">
+                </div>
+            </div>
+
+            <!-- Prototype -->
+            <div class="card dark-card mb-16 slide-up">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <i data-lucide="monitor" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                    <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Prototype</h3>
+                </div>
+                <p style="max-width: 100%;">
+                    Wireframes established the layout of the claim tracking dashboard, error alert queue,
+                    eligibility verification screen, and revenue analytics view. High-fidelity designs applied
+                    a clean, professional visual system with clear status indicators, priority tags, and data
+                    visualizations designed to support fast scanning and decision-making in a high-volume
+                    billing environment. An interactive prototype simulated a complete billing specialist workflow
+                    from claim receipt to error resolution and resubmission.
+                </p>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../ClaimGuard/Lo-fi.png" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+                <div class="mt-16 flex-col gap-16" style="margin-top: 32px;">
+                    <img src="../ClaimGuard/Hi-fi.png" alt="Prototype" class="rounded-img"
+                        style="width: 100%; max-height: 600px; object-fit: contain;">
+                </div>
+            </div>
+
+            <!-- Test -->
+            <div class="grid-2-col mb-16 slide-up">
+                <div class="card dark-card">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <i data-lucide="check-square" class="highlight" style="width: 2.5rem; height: 2.5rem;"></i>
+                        <h3 class="highlight" style="margin-bottom: 0; font-size: 1.5rem;">Test</h3>
+                    </div>
+                    <p>
+                        Usability testing was conducted with billing specialists and financial managers using
+                        simulated claim management scenarios. Testing evaluated how quickly users could locate
+                        high-priority denied claims, understand error details, and complete a resubmission workflow.
+                        Financial manager testing focused on the revenue analytics dashboard clarity and the
+                        usefulness of claim status summaries. Feedback was used to refine the claim priority
+                        system, error detail presentation, and the financial reporting interface.
+                    </p>
+                </div>
+                <div class="card dark-card">
+                    <h3 class="highlight" style="margin-bottom: 24px;">Testing Result & Feedback</h3>
+                    <ul
+                        style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Faster Claim
+                            Prioritization
+                            — Billing specialists could identify and prioritize high-value denied claims more quickly
+                            using the error queue.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Clearer Error Details
+                            — Structured error cards with resolution guidance reduced the time needed to understand and
+                            fix billing issues.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Improved Revenue
+                            Visibility
+                            — Financial managers confirmed that the analytics dashboard provided clearer actionable
+                            insights than previous reporting tools.</li>
+                        <li style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);"><i data-lucide="check" class="highlight" style="width: 1.2rem; height: 1.2rem;"></i>Streamlined Workflow
+                            — The end-to-end billing workflow required fewer steps to complete compared to existing
+                            legacy processes.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section slide-up" style="margin-top: 48px;">
+            <h3 style="font-size: 1.5rem; font-weight: 600;">Design System</h3>
+            <hr style="border-color: var(--border-color); margin-top: 16px; margin-bottom: 32px;">
+
+            <div class="grid-3-col">
+                <div class="card dark-card flex-col justify-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Design System</h3>
+                    <p style="margin-top: 8px;">The ClaimGuard Design System supports a data-dense billing
+                        environment with clean, professional components. It includes claim status color tokens,
+                        priority indicators, data table patterns, financial chart guidelines, and form components
+                        optimized for high-volume data review and processing workflows.</p>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Typography</h3>
+                    <p class="small-text" style="margin-top: 8px;">Font: Inter</p>
+                    <div class="typo-sample" style="justify-content: center; margin-top: 16px;">
+                        <span>H1</span>
+                        <span>H2</span>
+                        <span>H3</span>
+                    </div>
+                </div>
+                <div class="card dark-card center-text flex-col justify-center align-center">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Icon</h3>
+                    <p class="small-text" style="margin-top: 8px;">style icon: Outline</p>
+                    <div class="icon-sample" style="justify-content: center; margin-top: 16px;">
+                        <i data-lucide="search"></i>
+                        <i data-lucide="bell"></i>
+                        <i data-lucide="settings"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section grid-3-col-uneven slide-up mt-16" style="margin-bottom: 80px;">
+            <div class="flex-col gap-16">
+                <div class="card dark-card flex-col">
+                    <h3 class="section-title highlight" style="font-size: 1.3rem;">Mood and tone</h3>
+                    <p class="small-text" style="margin-top: 8px;">
+                        ClaimGuard's visual direction is professional, structured, and precise. The interface
+                        uses a clean layout with clear data hierarchy, neutral tones accented by purposeful
+                        status colors, and a typography system that supports scanning large volumes of financial
+                        data efficiently. The design communicates reliability and accuracy — values essential
+                        in a healthcare billing environment.
+                    </p>
+                </div>
+                <div class="mood-images grid-2-col-inner">
+                    <img src="../ClaimGuard/MT 1.png" alt="Mood 1" class="rounded-img">
+                    <img src="../ClaimGuard/MT 2.png" alt="Mood 2" class="rounded-img">
+                </div>
+            </div>
+            <div class="card dark-card mockup-card flex-col justify-center align-center">
+                <img src="../ClaimGuard/Mockup.png" alt="Application Mockups" class="mockup-img">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer slide-up">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2>Contact <span class="highlight">me</span></h2>
+                <p class="small-text" style="margin-top: 8px;">Lets create an experience people will remember.</p>
+            </div>
+            <div class="footer-right small-text">
+                <p>Phone: 090-328-3039</p>
+                <p>Email: kantaphonchapchainai@gmail.com</p>
+                <p>Bangkok, Thailand</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2026 UX/UI Designer. Crafted with precision.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
